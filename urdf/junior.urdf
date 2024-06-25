@@ -41,6 +41,28 @@
         </visual>
     </link>
 
+    <!-- Front Bumper Link -->
+    <link name="FrontBumper">
+        <visual>
+            <geometry>
+                <mesh filename="package://junior_description/meshes/robitFrontBumper.stl"/>
+            </geometry>
+            <material name="black"/>
+        </visual>
+    </link>
+
+
+    <!-- Back Bumper Link -->
+    <link name="BackBumper">
+        <visual>
+            <geometry>
+                <mesh filename="package://junior_description/meshes/robitBackBumper.stl"/>
+            </geometry>
+            <material name="black"/>
+        </visual>
+    </link>
+
+
     <!-- Front Lidar Link -->
     <link name="FrontLidar">
         <visual>
@@ -101,7 +123,9 @@
         </visual>
     </link>
 
-    <!-- Current Thinking -> Chassis Z = Height / 2 so 0.112, will probably need to be raised additionally to prevent scraping-->
+
+
+    <!-- START OF JOINTS -->
     <joint name="ChassisJoint" type="fixed">
         <parent link="base_link"/>
         <child link="Chassis"/>
@@ -147,4 +171,54 @@
         <origin xyz="-0.193 -0.2635 -0.07" rpy="0 0 0"/>
         <axis xyz="0 1 0"/>
     </joint>
+
+    <joint name="FrontBumperLoc" type="fixed">
+        <parent link="Chassis"/>
+        <child link="FrontBumper"/>
+        <origin xyz="0.321 0 0.025" rpy="0 0 0"/>
+    </joint>
+
+    <joint name="BackBumperLoc" type="fixed">
+        <parent link="Chassis"/>
+        <child link="BackBumper"/>
+        <origin xyz="-0.321 0 -0.0795" rpy="0 0 0"/>
+    </joint>
+    <!-- END OF JOINTS -->
+
+    <!-- Back bumper offset, required z amount to be at bottom of chassis and length / 2 for x-->
+
+
+
+
+
+    <!-- Experimentation with Moving Parts ex. Lidars, Wheels
+
+    <gazebo reference="FrontLidarGlass">
+        <sensor name="laser" type="ray">
+            <pose> 0 0 0 0 0 0 </pose>
+            <visualize>true</visualize>
+            <update_rate>10</update_rate>
+            <ray>
+                <scan>
+                    <horizontal>
+                    <samples>270</samples>
+                    <min_angle>-2.35</min_angle>
+                    <max_angle>2.35</max_angle>
+                    </horizontal>
+                </scan>
+                <range>
+                    Range Unknown as of Now, Using Default Values 
+                    <min>0.3</min>
+                    <max>12</max>
+                </range>
+            </ray>
+            <plugin name="fl_controller" filename="libgazebo_ros_ray_sensor.so">
+                <ros>
+                    Fill in ROS descriptors here
+                </ros>
+                <output_type>sensor_msgs/LaserScan</output_type>
+                <frame_name>FrontLidarGlass</frame_name>
+            </plugin>
+        </sensor>
+    </gazebo> -->
 </robot>
