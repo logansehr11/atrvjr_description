@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<!-- Chassis Width: 0.387m -->
+<!-- Chassis Length: 0.642m -->
+<!-- Chassis Height: 0.224m -->
+<!-- Wheel Diameter: 0.315m -->
+<!-- Wheel Width: 0.105m -->
+<!-- Wheel to Body: 0.125m -->
+<!-- Axle Distance: 0.386m -->
+<!-- Calculation 1: 0.1185m (0.237 / 2) -->
+<!-- Calculation 2: 0.193m (0.386 / 2) -->
+<!-- Calculation 3: 0.2635m (0.387 / 2 + 0.07) -->
+
+<!-- Front Lidar Width: 0.155m -->
+<!-- Front Lidar Length: 0.155m -->
+<!-- Front Lidar Height: 0.185m -->
+<robot name="Junior">
+    <material name="black">
+        <color rgba="0 0 0 1"/>
+    </material>
+    
+    <material name="red">
+        <color rgba="1 0 0 1"/>
+    </material>
+
+    <material name="skyblue">
+        <color rgba="0.0 0.75 1.0 1.0"/>
+    </material>
+
+    <!-- Base Link -->
+    <link name="base_link">
+        
+    </link>
+
+    <!-- Chassis Link -->
+    <link name="Chassis">
+        <visual>
+            <geometry>
+                <mesh filename="package://junior_description/meshes/robitChassis.stl"/>
+            </geometry>
+            <material name="red"/>
+        </visual>
+    </link>
+
+    <!-- Front Lidar Link -->
+    <link name="FrontLidar">
+        <visual>
+            <geometry>
+                <mesh filename="package://junior_description/meshes/robitFrontLidarCase.stl"/>
+            </geometry>
+            <material name="skyblue"/>
+        </visual>
+    </link>
+
+    <!-- Front Lidar Glass Link -->
+    <link name="FrontLidarGlass">
+        <visual>
+            <geometry>
+                <mesh filename="package://junior_description/meshes/robitFrontLidarGlass.stl"/>
+            </geometry>
+            <material name="black"/>
+        </visual>
+    </link>
+
+    <!-- Left Front Link -->
+    <link name="WheelLeftFront">
+        <visual>
+            <geometry>
+                <mesh filename="package://junior_description/meshes/robitWheel.stl"/>
+            </geometry>
+            <material name="black"/>
+        </visual>
+    </link>
+
+    <!-- Right Front Link -->
+    <link name="WheelRightFront">
+        <visual>
+            <geometry>
+                <mesh filename="package://junior_description/meshes/robitWheel.stl"/>
+            </geometry>
+            <material name="black"/>
+        </visual>
+    </link>
+
+    <!-- Left Back Link -->
+    <link name="WheelLeftBack">
+        <visual>
+            <geometry>
+                <mesh filename="package://junior_description/meshes/robitWheel.stl"/>
+            </geometry>
+            <material name="black"/>
+        </visual>
+    </link>
+
+    <!-- Right Back Link -->
+    <link name="WheelRightBack">
+        <visual>
+            <geometry>
+                <mesh filename="package://junior_description/meshes/robitWheel.stl"/>
+            </geometry>
+            <material name="black"/>
+        </visual>
+    </link>
+
+    <!-- Current Thinking -> Chassis Z = Height / 2 so 0.112, will probably need to be raised additionally to prevent scraping-->
+    <joint name="ChassisJoint" type="fixed">
+        <parent link="base_link"/>
+        <child link="Chassis"/>
+        <origin xyz="1 0 0.23"/>
+    </joint>
+
+    <joint name="FrontLidarHolster" type="fixed">
+        <parent link="Chassis"/>
+        <child link="FrontLidar"/>
+        <origin xyz="0.321 0 -0.0197"/> 
+    </joint>
+
+    <joint name="FrontLidarVision" type="fixed">
+        <parent link="FrontLidar"/>
+        <child link="FrontLidarGlass"/>
+        <origin xyz="0.075 0 0"/> 
+    </joint>
+
+    <joint name="AxleLeftFront" type="continuous">
+        <parent link="Chassis"/>
+        <child link="WheelLeftFront"/>
+        <origin xyz="0.193 0.2635 -0.07" rpy="0 0 0"/>
+        <axis xyz="0 1 0"/>
+    </joint>
+    
+    <joint name="AxleRightFront" type="continuous">
+        <parent link="Chassis"/>
+        <child link="WheelRightFront"/>
+        <origin xyz="0.193 -0.2635 -0.07" rpy="0 0 0"/>
+        <axis xyz="0 1 0"/>
+    </joint>
+
+    <joint name="AxleLeftBack" type="continuous">
+        <parent link="Chassis"/>
+        <child link="WheelLeftBack"/>
+        <origin xyz="-0.193 0.2635 -0.07" rpy="0 0 0"/>
+        <axis xyz="0 1 0"/>
+    </joint>
+
+    <joint name="AxleRightBack" type="continuous">
+        <parent link="Chassis"/>
+        <child link="WheelRightBack"/>
+        <origin xyz="-0.193 -0.2635 -0.07" rpy="0 0 0"/>
+        <axis xyz="0 1 0"/>
+    </joint>
+</robot>
