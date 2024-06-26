@@ -39,8 +39,14 @@
             </geometry>
             <material name="red"/>
         </visual>
+        <collision>
+            <geometry>
+                <mesh filename="/home/csrobot/junior_ws/src/junior_description/meshes/robitChassis.stl"/>
+            </geometry>
+            <material name="red"/>
+        </collision>
         <inertial>
-            <mass value="10"/>
+            <mass value="0.01"/>
             <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
         </inertial>
     </link>
@@ -53,8 +59,14 @@
             </geometry>
             <material name="black"/>
         </visual>
+        <collision>
+            <geometry>
+                <mesh filename="/home/csrobot/junior_ws/src/junior_description/meshes/robitFrontBumper.stl"/>
+            </geometry>
+            <material name="black"/>
+        </collision>
         <inertial>
-            <mass value="10"/>
+            <mass value="0.01"/>
             <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
         </inertial>
     </link>
@@ -68,8 +80,14 @@
             </geometry>
             <material name="black"/>
         </visual>
+        <collision>
+            <geometry>
+                <mesh filename="/home/csrobot/junior_ws/src/junior_description/meshes/robitBackBumper.stl"/>
+            </geometry>
+            <material name="black"/>
+        </collision>
         <inertial>
-            <mass value="10"/>
+            <mass value="0.01"/>
             <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
         </inertial>
     </link>
@@ -83,8 +101,14 @@
             </geometry>
             <material name="skyblue"/>
         </visual>
+        <collision>
+            <geometry>
+                <mesh filename="/home/csrobot/junior_ws/src/junior_description/meshes/robitFrontLidarCase.stl"/>
+            </geometry>
+            <material name="skyblue"/>
+        </collision>
         <inertial>
-            <mass value="10"/>
+            <mass value="0.01"/>
             <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
         </inertial>
     </link>
@@ -97,8 +121,14 @@
             </geometry>
             <material name="black"/>
         </visual>
+        <collision>
+            <geometry>
+                <mesh filename="/home/csrobot/junior_ws/src/junior_description/meshes/robitFrontLidarGlass.stl"/>
+            </geometry>
+            <material name="black"/>
+        </collision>
         <inertial>
-            <mass value="10"/>
+            <mass value="0.01"/>
             <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
         </inertial>
     </link>
@@ -111,8 +141,14 @@
             </geometry>
             <material name="black"/>
         </visual>
+        <collision>
+            <geometry>
+                <mesh filename="/home/csrobot/junior_ws/src/junior_description/meshes/robitWheel.stl"/>
+            </geometry>
+            <material name="black"/>
+        </collision>
         <inertial>
-            <mass value="10"/>
+            <mass value="0.01"/>
             <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
         </inertial>
     </link>
@@ -125,8 +161,14 @@
             </geometry>
             <material name="black"/>
         </visual>
+        <collision>
+            <geometry>
+                <mesh filename="/home/csrobot/junior_ws/src/junior_description/meshes/robitWheel.stl"/>
+            </geometry>
+            <material name="black"/>
+        </collision>
         <inertial>
-            <mass value="10"/>
+            <mass value="0.01"/>
             <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
         </inertial>
     </link>
@@ -139,8 +181,14 @@
             </geometry>
             <material name="black"/>
         </visual>
+        <collision>
+            <geometry>
+                <mesh filename="/home/csrobot/junior_ws/src/junior_description/meshes/robitWheel.stl"/>
+            </geometry>
+            <material name="black"/>
+        </collision>
         <inertial>
-            <mass value="10"/>
+            <mass value="0.01"/>
             <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
         </inertial>
     </link>
@@ -153,8 +201,14 @@
             </geometry>
             <material name="black"/>
         </visual>
+        <collision>
+            <geometry>
+                <mesh filename="/home/csrobot/junior_ws/src/junior_description/meshes/robitWheel.stl"/>
+            </geometry>
+            <material name="black"/>
+        </collision>
         <inertial>
-            <mass value="10"/>
+            <mass value="0.01"/>
             <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
         </inertial>
     </link>
@@ -165,7 +219,7 @@
     <joint name="ChassisJoint" type="fixed">
         <parent link="base_link"/>
         <child link="Chassis"/>
-        <origin xyz="1 0 0.23"/>
+        <origin xyz="0 0 0.23"/>
     </joint>
 
     <joint name="FrontLidarHolster" type="fixed">

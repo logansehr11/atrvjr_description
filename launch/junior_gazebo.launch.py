@@ -49,5 +49,5 @@ def generate_launch_description():
             executable='spawn_entity.py',
             name='urdf_spawner',
             output='screen',
-            arguments=["-topic", "/robot_description", "-entity", "junior"])
+            arguments=["-topic", "/robot_description", "-entity", "junior", "-x", "0.0", "-y", "0.0", "-z", "20.0"])
   ])
