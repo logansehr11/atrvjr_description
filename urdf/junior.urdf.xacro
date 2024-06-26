@@ -1,18 +1,4 @@
 <?xml version="1.0"?>
-<!-- Chassis Width: 0.387m -->
-<!-- Chassis Length: 0.642m -->
-<!-- Chassis Height: 0.224m -->
-<!-- Wheel Diameter: 0.315m -->
-<!-- Wheel Width: 0.105m -->
-<!-- Wheel to Body: 0.125m -->
-<!-- Axle Distance: 0.386m -->
-<!-- Calculation 1: 0.1185m (0.237 / 2) -->
-<!-- Calculation 2: 0.193m (0.386 / 2) -->
-<!-- Calculation 3: 0.2635m (0.387 / 2 + 0.07) -->
-
-<!-- Front Lidar Width: 0.155m -->
-<!-- Front Lidar Length: 0.155m -->
-<!-- Front Lidar Height: 0.185m -->
 <robot name="junior">
     <material name="black">
         <color rgba="0 0 0 1"/>
@@ -35,13 +21,13 @@
     <link name="Chassis">
         <visual>
             <geometry>
-                <mesh filename="/home/csrobot/junior_ws/src/junior_description/meshes/robitChassis.stl"/>
+                <mesh filename="file://$(find junior_description)/meshes/robitChassis.stl"/>
             </geometry>
             <material name="red"/>
         </visual>
         <collision>
             <geometry>
-                <mesh filename="/home/csrobot/junior_ws/src/junior_description/meshes/robitChassis.stl"/>
+                <mesh filename="file://$(find junior_description)/meshes/robitChassis.stl"/>
             </geometry>
             <material name="red"/>
         </collision>
@@ -55,13 +41,13 @@
     <link name="FrontBumper">
         <visual>
             <geometry>
-                <mesh filename="/home/csrobot/junior_ws/src/junior_description/meshes/robitFrontBumper.stl"/>
+                <mesh filename="file://$(find junior_description)/meshes/robitFrontBumper.stl"/>
             </geometry>
             <material name="black"/>
         </visual>
         <collision>
             <geometry>
-                <mesh filename="/home/csrobot/junior_ws/src/junior_description/meshes/robitFrontBumper.stl"/>
+                <mesh filename="file://$(find junior_description)/meshes/robitFrontBumper.stl"/>
             </geometry>
             <material name="black"/>
         </collision>
@@ -76,13 +62,13 @@
     <link name="BackBumper">
         <visual>
             <geometry>
-                <mesh filename="/home/csrobot/junior_ws/src/junior_description/meshes/robitBackBumper.stl"/>
+                <mesh filename="file://$(find junior_description)/meshes/robitBackBumper.stl"/>
             </geometry>
             <material name="black"/>
         </visual>
         <collision>
             <geometry>
-                <mesh filename="/home/csrobot/junior_ws/src/junior_description/meshes/robitBackBumper.stl"/>
+                <mesh filename="file://$(find junior_description)/meshes/robitBackBumper.stl"/>
             </geometry>
             <material name="black"/>
         </collision>
@@ -97,13 +83,13 @@
     <link name="FrontLidar">
         <visual>
             <geometry>
-                <mesh filename="/home/csrobot/junior_ws/src/junior_description/meshes/robitFrontLidarCase.stl"/>
+                <mesh filename="file://$(find junior_description)/meshes/robitFrontLidarCase.stl"/>
             </geometry>
             <material name="skyblue"/>
         </visual>
         <collision>
             <geometry>
-                <mesh filename="/home/csrobot/junior_ws/src/junior_description/meshes/robitFrontLidarCase.stl"/>
+                <mesh filename="file://$(find junior_description)/meshes/robitFrontLidarCase.stl"/>
             </geometry>
             <material name="skyblue"/>
         </collision>
@@ -117,13 +103,13 @@
     <link name="FrontLidarGlass">
         <visual>
             <geometry>
-                <mesh filename="/home/csrobot/junior_ws/src/junior_description/meshes/robitFrontLidarGlass.stl"/>
+                <mesh filename="file://$(find junior_description)/meshes/robitFrontLidarGlass.stl"/>
             </geometry>
             <material name="black"/>
         </visual>
         <collision>
             <geometry>
-                <mesh filename="/home/csrobot/junior_ws/src/junior_description/meshes/robitFrontLidarGlass.stl"/>
+                <mesh filename="file://$(find junior_description)/meshes/robitFrontLidarGlass.stl"/>
             </geometry>
             <material name="black"/>
         </collision>
@@ -137,13 +123,13 @@
     <link name="WheelLeftFront">
         <visual>
             <geometry>
-                <mesh filename="/home/csrobot/junior_ws/src/junior_description/meshes/robitWheel.stl"/>
+                <mesh filename="file://$(find junior_description)/meshes/robitWheel.stl"/>
             </geometry>
             <material name="black"/>
         </visual>
         <collision>
             <geometry>
-                <mesh filename="/home/csrobot/junior_ws/src/junior_description/meshes/robitWheel.stl"/>
+                <mesh filename="file://$(find junior_description)/meshes/robitWheel.stl"/>
             </geometry>
             <material name="black"/>
         </collision>
@@ -157,13 +143,13 @@
     <link name="WheelRightFront">
         <visual>
             <geometry>
-                <mesh filename="/home/csrobot/junior_ws/src/junior_description/meshes/robitWheel.stl"/>
+                <mesh filename="file://$(find junior_description)/meshes/robitWheel.stl"/>
             </geometry>
             <material name="black"/>
         </visual>
         <collision>
             <geometry>
-                <mesh filename="/home/csrobot/junior_ws/src/junior_description/meshes/robitWheel.stl"/>
+                <mesh filename="file://$(find junior_description)/meshes/robitWheel.stl"/>
             </geometry>
             <material name="black"/>
         </collision>
@@ -177,13 +163,13 @@
     <link name="WheelLeftBack">
         <visual>
             <geometry>
-                <mesh filename="/home/csrobot/junior_ws/src/junior_description/meshes/robitWheel.stl"/>
+                <mesh filename="file://$(find junior_description)/meshes/robitWheel.stl"/>
             </geometry>
             <material name="black"/>
         </visual>
         <collision>
             <geometry>
-                <mesh filename="/home/csrobot/junior_ws/src/junior_description/meshes/robitWheel.stl"/>
+                <mesh filename="file://$(find junior_description)/meshes/robitWheel.stl"/>
             </geometry>
             <material name="black"/>
         </collision>
@@ -197,13 +183,13 @@
     <link name="WheelRightBack">
         <visual>
             <geometry>
-                <mesh filename="/home/csrobot/junior_ws/src/junior_description/meshes/robitWheel.stl"/>
+                <mesh filename="file://$(find junior_description)/meshes/robitWheel.stl"/>
             </geometry>
             <material name="black"/>
         </visual>
         <collision>
             <geometry>
-                <mesh filename="/home/csrobot/junior_ws/src/junior_description/meshes/robitWheel.stl"/>
+                <mesh filename="file://$(find junior_description)/meshes/robitWheel.stl"/>
             </geometry>
             <material name="black"/>
         </collision>
@@ -212,7 +198,6 @@
             <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
         </inertial>
     </link>
-
 
 
     <!-- START OF JOINTS -->
@@ -275,8 +260,29 @@
     </joint>
     <!-- END OF JOINTS -->
 
-    <!-- Back bumper offset, required z amount to be at bottom of chassis and length / 2 for x-->
 
+    <!-- START OF GAZEBO -->
+    <!-- Chassis -->
+    <gazebo reference="Chassis">
+        <material>Gazebo/Red</material>
+    </gazebo>
+
+    <!-- Front Bumper -->
+    <gazebo reference="FrontBumper">
+        <material>Gazebo/Black</material>
+    </gazebo>
+
+    <!-- Back Bumper -->
+    <gazebo reference="BackBumper">
+        <material>Gazebo/Black</material>
+    </gazebo>
+
+    <!-- Front Lidar Case -->
+    <gazebo reference="FrontLidar">
+        <material>Gazebo/SkyBlue</material>
+    </gazebo>
+
+    <!-- Front Lidar -->
     <gazebo reference="FrontLidarGlass">
         <sensor name="laser" type="ray">
             <pose> 0 0 0 0 0 0 </pose>
@@ -291,9 +297,8 @@
                     </horizontal>
                 </scan>
                 <range>
-                    Range Unknown as of Now, Using Default Values 
                     <min>0.3</min>
-                    <max>12</max>
+                    <max>5</max>
                 </range>
             </ray>
             <plugin name="fl_controller" filename="libgazebo_ros_ray_sensor.so">
@@ -304,5 +309,25 @@
                 <frame_name>FrontLidarGlass</frame_name>
             </plugin>
         </sensor>
+        <material>Gazebo/Black</material>
     </gazebo>
+
+    <!-- WHEELS -->
+    <gazebo reference="WheelLeftFront">
+        <material>Gazebo/Black</material>
+    </gazebo>
+
+    <gazebo reference="WheelRightFront">
+        <material>Gazebo/Black</material>
+    </gazebo>
+
+    <gazebo reference="WheelLeftBack">
+        <material>Gazebo/Black</material>
+    </gazebo>
+
+    <gazebo reference="WheelRightBack">
+        <material>Gazebo/Black</material>
+    </gazebo>
+    <!-- END OF WHEELS -->
+    <!-- END OF GAZEBO -->
 </robot>

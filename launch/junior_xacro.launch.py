@@ -1,5 +1,5 @@
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
+from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, ExecuteProcess
 from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
 from launch_ros.substitutions import FindPackageShare
 from launch_ros.actions import Node
@@ -9,9 +9,20 @@ from launch_ros.parameter_descriptions import ParameterValue
 def generate_launch_description():
     ld = LaunchDescription()
 
-    packagePath = FindPackageShare('junior_description')
+    ld.add_action(
+        ExecuteProcess(
+            cmd=[
+                'gazebo',
+                '--verbose',
+                '-s',
+                'libgazebo_ros_factory.so'
+            ],
+            output='screen'
+        )
+    )
 
-    
+
+    packagePath = FindPackageShare('junior_description')
 
     ld.add_action(
         Node(
@@ -32,15 +43,22 @@ def generate_launch_description():
     ld.add_action(
         Node(
             package='joint_state_publisher_gui',
-            executable='joint_state_publisher_gui',
+            executable='joint_state_publisher_gui'
         )
     )
 
-    ld.add_action(Node(
-        package='rviz2',
-        executable='rviz2',
-        output='screen',
-        arguments=['-d', PathJoinSubstitution([packagePath, 'config', 'junior_model.rviz'])],
-    ))
+    
+
+    ld.add_action(
+        Node(
+            package='gazebo_ros',
+            executable='spawn_entity.py',
+            output='screen',
+            arguments=[
+                '-topic', '/robot_description',
+                '-entity', 'junior'
+            ]
+        )
+    )
 
     return ld
