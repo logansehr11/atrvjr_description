@@ -46,7 +46,7 @@
             <material name="red"/>
         </collision>
         <inertial>
-            <mass value="0.01"/>
+            <mass value="35"/>
             <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
         </inertial>
     </link>
@@ -66,7 +66,7 @@
             <material name="black"/>
         </collision>
         <inertial>
-            <mass value="0.01"/>
+            <mass value="3"/>
             <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
         </inertial>
     </link>
@@ -87,7 +87,7 @@
             <material name="black"/>
         </collision>
         <inertial>
-            <mass value="0.01"/>
+            <mass value="1.5"/>
             <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
         </inertial>
     </link>
@@ -108,7 +108,7 @@
             <material name="skyblue"/>
         </collision>
         <inertial>
-            <mass value="0.01"/>
+            <mass value="2"/>
             <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
         </inertial>
     </link>
@@ -128,7 +128,7 @@
             <material name="black"/>
         </collision>
         <inertial>
-            <mass value="0.01"/>
+            <mass value="0.1"/>
             <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
         </inertial>
     </link>
@@ -148,7 +148,7 @@
             <material name="black"/>
         </collision>
         <inertial>
-            <mass value="0.01"/>
+            <mass value="5"/>
             <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
         </inertial>
     </link>
@@ -168,7 +168,7 @@
             <material name="black"/>
         </collision>
         <inertial>
-            <mass value="0.01"/>
+            <mass value="5"/>
             <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
         </inertial>
     </link>
@@ -188,7 +188,7 @@
             <material name="black"/>
         </collision>
         <inertial>
-            <mass value="0.01"/>
+            <mass value="5"/>
             <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
         </inertial>
     </link>
@@ -208,7 +208,7 @@
             <material name="black"/>
         </collision>
         <inertial>
-            <mass value="0.01"/>
+            <mass value="5"/>
             <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
         </inertial>
     </link>
@@ -277,7 +277,6 @@
 
     <!-- Back bumper offset, required z amount to be at bottom of chassis and length / 2 for x-->
 
-    <!--
     <gazebo reference="FrontLidarGlass">
         <sensor name="laser" type="ray">
             <pose> 0 0 0 0 0 0 </pose>
@@ -305,5 +304,5 @@
                 <frame_name>FrontLidarGlass</frame_name>
             </plugin>
         </sensor>
-    </gazebo> -->
+    </gazebo>
 </robot>
