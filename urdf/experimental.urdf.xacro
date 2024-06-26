@@ -13,7 +13,7 @@
 <!-- Front Lidar Width: 0.155m -->
 <!-- Front Lidar Length: 0.155m -->
 <!-- Front Lidar Height: 0.185m -->
-<robot name="Junior">
+<robot name="junior">
     <material name="black">
         <color rgba="0 0 0 1"/>
     </material>
@@ -35,7 +35,7 @@
     <link name="Chassis">
         <visual>
             <geometry>
-                <mesh filename="$(find junior_description)/meshes/robitChassis.stl"/>
+                <mesh filename="/home/csrobot/junior_ws/src/junior_description/meshes/robitChassis.stl"/>
             </geometry>
             <material name="red"/>
         </visual>
@@ -49,7 +49,7 @@
     <link name="FrontBumper">
         <visual>
             <geometry>
-                <mesh filename="$(find junior_description)/meshes/robitFrontBumper.stl"/>
+                <mesh filename="/home/csrobot/junior_ws/src/junior_description/meshes/robitFrontBumper.stl"/>
             </geometry>
             <material name="black"/>
         </visual>
@@ -64,7 +64,7 @@
     <link name="BackBumper">
         <visual>
             <geometry>
-                <mesh filename="$(find junior_description)/meshes/robitBackBumper.stl"/>
+                <mesh filename="/home/csrobot/junior_ws/src/junior_description/meshes/robitBackBumper.stl"/>
             </geometry>
             <material name="black"/>
         </visual>
@@ -79,7 +79,7 @@
     <link name="FrontLidar">
         <visual>
             <geometry>
-                <mesh filename="$(find junior_description)/meshes/robitFrontLidarCase.stl"/>
+                <mesh filename="/home/csrobot/junior_ws/src/junior_description/meshes/robitFrontLidarCase.stl"/>
             </geometry>
             <material name="skyblue"/>
         </visual>
@@ -93,7 +93,7 @@
     <link name="FrontLidarGlass">
         <visual>
             <geometry>
-                <mesh filename="$(find junior_description)/meshes/robitFrontLidarGlass.stl"/>
+                <mesh filename="/home/csrobot/junior_ws/src/junior_description/meshes/robitFrontLidarGlass.stl"/>
             </geometry>
             <material name="black"/>
         </visual>
@@ -107,7 +107,7 @@
     <link name="WheelLeftFront">
         <visual>
             <geometry>
-                <mesh filename="$(find junior_description)/meshes/robitWheel.stl"/>
+                <mesh filename="/home/csrobot/junior_ws/src/junior_description/meshes/robitWheel.stl"/>
             </geometry>
             <material name="black"/>
         </visual>
@@ -121,7 +121,7 @@
     <link name="WheelRightFront">
         <visual>
             <geometry>
-                <mesh filename="$(find junior_description)/meshes/robitWheel.stl"/>
+                <mesh filename="/home/csrobot/junior_ws/src/junior_description/meshes/robitWheel.stl"/>
             </geometry>
             <material name="black"/>
         </visual>
@@ -135,7 +135,7 @@
     <link name="WheelLeftBack">
         <visual>
             <geometry>
-                <mesh filename="$(find junior_description)/meshes/robitWheel.stl"/>
+                <mesh filename="/home/csrobot/junior_ws/src/junior_description/meshes/robitWheel.stl"/>
             </geometry>
             <material name="black"/>
         </visual>
@@ -149,7 +149,7 @@
     <link name="WheelRightBack">
         <visual>
             <geometry>
-                <mesh filename="$(find junior_description)/meshes/robitWheel.stl"/>
+                <mesh filename="/home/csrobot/junior_ws/src/junior_description/meshes/robitWheel.stl"/>
             </geometry>
             <material name="black"/>
         </visual>
@@ -223,12 +223,7 @@
 
     <!-- Back bumper offset, required z amount to be at bottom of chassis and length / 2 for x-->
 
-
-
-
-
-    <!-- Experimentation with Moving Parts ex. Lidars, Wheels
-
+    <!--
     <gazebo reference="FrontLidarGlass">
         <sensor name="laser" type="ray">
             <pose> 0 0 0 0 0 0 </pose>
