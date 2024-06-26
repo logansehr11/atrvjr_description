@@ -119,6 +119,26 @@
         </inertial>
     </link>
 
+    <!-- Back Lidar Case Link -->
+    <link name="BackLidarCase">
+        <visual>
+            <geometry>
+                <mesh filename="file://$(find junior_description)/meshes/robitBackLidarCase.stl"/>
+            </geometry>
+            <material name="black"/>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="file://$(find junior_description)/meshes/robitBackLidarCase.stl"/>
+            </geometry>
+            <material name="black"/>
+        </collision>
+        <inertial>
+            <mass value="2"/>
+            <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+        </inertial>
+    </link>
+
     <!-- Left Front Link -->
     <link name="WheelLeftFront">
         <visual>
@@ -217,6 +237,12 @@
         <parent link="FrontLidar"/>
         <child link="FrontLidarGlass"/>
         <origin xyz="0.075 0 0"/> 
+    </joint>
+
+    <joint name="BackLidarHolster" type="fixed">
+        <parent link="Chassis"/>
+        <child link="BackLidarCase"/>
+        <origin xyz="-0.285 0 0.319"/>
     </joint>
 
     <joint name="AxleLeftFront" type="continuous">
