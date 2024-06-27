@@ -290,22 +290,46 @@
     <!-- START OF GAZEBO -->
     <!-- Chassis -->
     <gazebo reference="Chassis">
-        <material>Gazebo/Red</material>
+        <visual>
+            <material>
+                <diffuse>1 0 0 1</diffuse>
+                <ambient>0.4 0.05 0.05 1</ambient>
+                <emissive>0 0 0 0</emissive>
+            </material>
+        </visual>
     </gazebo>
 
     <!-- Front Bumper -->
     <gazebo reference="FrontBumper">
-        <material>Gazebo/Black</material>
+        <visual>
+            <material>
+                <diffuse>0.2 0.2 0.2 1</diffuse>
+                <ambient>0.1 0.1 0.1 1</ambient>
+                <emissive>0 0 0 0</emissive>
+            </material>
+        </visual>
     </gazebo>
 
     <!-- Back Bumper -->
     <gazebo reference="BackBumper">
-        <material>Gazebo/Black</material>
+        <visual>
+            <material>
+                <diffuse>0.2 0.2 0.2 1</diffuse>
+                <ambient>0.1 0.1 0.1 1</ambient>
+                <emissive>0 0 0 0</emissive>
+            </material>
+        </visual>
     </gazebo>
 
     <!-- Front Lidar Case -->
     <gazebo reference="FrontLidar">
-        <material>Gazebo/SkyBlue</material>
+        <visual>
+            <material>
+                <diffuse>0.1 0.5 1 1</diffuse>
+                <ambient>0.0666 0.333 0.4 1</ambient>
+                <emissive>0 0 0 0</emissive>
+            </material>
+        </visual>
     </gazebo>
 
     <!-- Front Lidar -->
@@ -335,24 +359,54 @@
                 <frame_name>FrontLidarGlass</frame_name>
             </plugin>
         </sensor>
-        <material>Gazebo/Black</material>
+        <visual>
+            <material>
+                <diffuse>0.2 0.2 0.2 1</diffuse>
+                <ambient>0.1 0.1 0.1 1</ambient>
+                <emissive>0 0 0 0</emissive>
+            </material>
+        </visual>
     </gazebo>
 
     <!-- WHEELS -->
     <gazebo reference="WheelLeftFront">
-        <material>Gazebo/Black</material>
+        <visual>
+            <material>
+                <diffuse>0.2 0.2 0.2 1</diffuse>
+                <ambient>0.1 0.1 0.1 1</ambient>
+                <emissive>0 0 0 0</emissive>
+            </material>
+        </visual>
     </gazebo>
 
     <gazebo reference="WheelRightFront">
-        <material>Gazebo/Black</material>
+        <visual>
+            <material>
+                <diffuse>0.2 0.2 0.2 1</diffuse>
+                <ambient>0.1 0.1 0.1 1</ambient>
+                <emissive>0 0 0 0</emissive>
+            </material>
+        </visual>
     </gazebo>
 
     <gazebo reference="WheelLeftBack">
-        <material>Gazebo/Black</material>
+        <visual>
+            <material>
+                <diffuse>0.2 0.2 0.2 1</diffuse>
+                <ambient>0.1 0.1 0.1 1</ambient>
+                <emissive>0 0 0 0</emissive>
+            </material>
+        </visual>
     </gazebo>
 
     <gazebo reference="WheelRightBack">
-        <material>Gazebo/Black</material>
+        <visual>
+            <material>
+                <diffuse>0.2 0.2 0.2 1</diffuse>
+                <ambient>0.1 0.1 0.1 1</ambient>
+                <emissive>0 0 0 0</emissive>
+            </material>
+        </visual>
     </gazebo>
     <!-- END OF WHEELS -->
     <!-- END OF GAZEBO -->
