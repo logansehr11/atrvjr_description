@@ -9,7 +9,11 @@
     </material>
 
     <material name="skyblue">
-        <color rgba="0.0 0.75 1.0 1.0"/>
+        <color rgba="0 0.75 1 1"/>
+    </material>
+
+    <material name="silver">
+        <color rgba="0.77 0.78 0.78 1"/>
     </material>
 
     <!-- Base Link -->
@@ -139,6 +143,46 @@
         </inertial>
     </link>
 
+    <!-- Back Lidar Stand Link -->
+    <link name="BackLidarStand">
+        <visual>
+            <geometry>
+                <mesh filename="file://$(find junior_description)/meshes/robitBackLidarStand.stl"/>
+            </geometry>
+            <material name="silver"/>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="file://$(find junior_description)/meshes/robitBackLidarStand.stl"/>
+            </geometry>
+            <material name="silver"/>
+        </collision>
+        <inertial>
+            <mass value="1"/>
+            <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+        </inertial>
+    </link>
+
+    <!-- Back Lidar Head -->
+    <link name="BackLidarHead">
+        <visual>
+            <geometry>
+                <mesh filename="file://$(find junior_description)/meshes/robitBackLidarHead.stl"/>
+            </geometry>
+            <material name="silver"/>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="file://$(find junior_description)/meshes/robitBackLidarHead.stl"/>
+            </geometry>
+            <material name="silver"/>
+        </collision>
+        <inertial>
+            <mass value="3"/>
+            <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+        </inertial>
+    </link>
+
     <!-- Left Front Link -->
     <link name="WheelLeftFront">
         <visual>
@@ -245,6 +289,20 @@
         <origin xyz="-0.285 0 0.319"/>
     </joint>
 
+    <joint name="BackLidarStandJoint" type="revolute">
+        <parent link="BackLidarCase"/>
+        <child link="BackLidarStand"/>
+        <origin xyz="0 0 -0.03"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-1" upper="1" effort="5" velocity="2"/>
+    </joint>
+
+    <joint name="BackLidarHeadJoint" type="fixed">
+        <parent link="BackLidarStand"/>
+        <child link="BackLidarHead"/>
+        <origin xyz="0 0 0.05" rpy="0 -3.14 0"/>
+    </joint>
+
     <joint name="AxleLeftFront" type="continuous">
         <parent link="Chassis"/>
         <child link="WheelLeftFront"/>
@@ -341,14 +399,14 @@
             <ray>
                 <scan>
                     <horizontal>
-                    <samples>270</samples>
-                    <min_angle>-2.35</min_angle>
-                    <max_angle>2.35</max_angle>
+                    <samples>360</samples>
+                    <min_angle>-1.57</min_angle>
+                    <max_angle>1.57</max_angle>
                     </horizontal>
                 </scan>
                 <range>
-                    <min>0.3</min>
-                    <max>5</max>
+                    <min>0.2</min>
+                    <max>3</max>
                 </range>
             </ray>
             <plugin name="fl_controller" filename="libgazebo_ros_ray_sensor.so">
@@ -363,6 +421,64 @@
             <material>
                 <diffuse>0.2 0.2 0.2 1</diffuse>
                 <ambient>0.1 0.1 0.1 1</ambient>
+                <emissive>0 0 0 0</emissive>
+            </material>
+        </visual>
+    </gazebo>
+
+    <!-- Back Lidar Case -->
+    <gazebo reference="BackLidarCase">
+        <visual>
+            <material>
+                <diffuse>0.2 0.2 0.2 1</diffuse>
+                <ambient>0.1 0.1 0.1 1</ambient>
+                <emissive>0 0 0 0</emissive>
+            </material>
+        </visual>
+    </gazebo>
+
+    <!-- Back Lidar Stand -->
+    <gazebo reference="BackLidarStand">
+        <visual>
+            <material>
+                <diffuse>0.77 0.78 0.78 1</diffuse>
+                <ambient>0.385 0.39 0.39 1</ambient>
+                <emissive>0 0 0 0</emissive>
+            </material>
+        </visual>
+    </gazebo>
+
+    <!-- Back Lidar Head -->
+    <gazebo reference="BackLidarHead">
+        <sensor name="blaser" type="ray">
+            <pose> 0 0 0 0 0 </pose>
+            <visualize>true</visualize>
+            <update_rate>10</update_rate>
+            <ray>
+                <scan>
+                    <horizontal>
+                    <samples>120</samples>
+                    <min_angle>-0.52</min_angle>
+                    <max_angle>0.52</max_angle>
+                    </horizontal>
+                </scan>
+                <range>
+                    <min>0.1</min>
+                    <max>2</max>
+                </range>
+            </ray>
+            <plugin name="bl_controller" filename="libgazebo_ros_ray_sensor.so">
+                <ros>
+                    <argument>-/out:=scan</argument>
+                </ros>
+                <output_type>sensor_msgs/LaserScan</output_type>
+                <frame_name>BackLidarHead</frame_name>
+            </plugin>
+        </sensor>
+        <visual>
+            <material>
+                <diffuse>0.77 0.78 0.78 1</diffuse>
+                <ambient>0.385 0.39 0.39 1</ambient>
                 <emissive>0 0 0 0</emissive>
             </material>
         </visual>
