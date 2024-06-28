@@ -36,8 +36,8 @@
             <material name="red"/>
         </collision>
         <inertial>
-            <mass value="35"/>
-            <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+            <mass value="45"/>
+            <inertia ixx="1.206" ixy="0.0" ixz="0.0" iyy="2.182" iyz="0.0" izz="2.182"/>
         </inertial>
     </link>
 
@@ -56,8 +56,8 @@
             <material name="black"/>
         </collision>
         <inertial>
-            <mass value="3"/>
-            <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+            <mass value="1"/>
+            <inertia ixx="0.013" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
         </inertial>
     </link>
 
@@ -77,8 +77,8 @@
             <material name="black"/>
         </collision>
         <inertial>
-            <mass value="1.5"/>
-            <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+            <mass value="1"/>
+            <inertia ixx="0.014" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
         </inertial>
     </link>
 
@@ -99,7 +99,7 @@
         </collision>
         <inertial>
             <mass value="2"/>
-            <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+            <inertia ixx="0.009" ixy="0.0" ixz="0.0" iyy="0.009" iyz="0.0" izz="0.009"/>
         </inertial>
     </link>
 
@@ -119,7 +119,7 @@
         </collision>
         <inertial>
             <mass value="0.1"/>
-            <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
         </inertial>
     </link>
 
@@ -138,8 +138,8 @@
             <material name="black"/>
         </collision>
         <inertial>
-            <mass value="2"/>
-            <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+            <mass value="0.5"/>
+            <inertia ixx="0.002" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
         </inertial>
     </link>
 
@@ -158,8 +158,8 @@
             <material name="silver"/>
         </collision>
         <inertial>
-            <mass value="1"/>
-            <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+            <mass value="0.5"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
         </inertial>
     </link>
 
@@ -178,8 +178,8 @@
             <material name="silver"/>
         </collision>
         <inertial>
-            <mass value="5"/>
-            <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+            <mass value="0.5"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
         </inertial>
     </link>
 
@@ -198,8 +198,8 @@
             <material name="black"/>
         </collision>
         <inertial>
-            <mass value="1"/>
-            <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+            <mass value="0.5"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
         </inertial>
     </link>
 
@@ -216,10 +216,18 @@
                 <mesh filename="file://$(find junior_description)/meshes/robitWheel.stl"/>
             </geometry>
             <material name="black"/>
+            <surface>
+                <friction>
+                    <ode>
+                        <mu>0.01</mu>
+                        <mu2>0.01</mu2>
+                    </ode>
+                </friction>
+            </surface>
         </collision>
         <inertial>
-            <mass value="5"/>
-            <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+            <mass value="2"/>
+            <inertia ixx="0.014" ixy="0.0" ixz="0.0" iyy="0.014" iyz="0.0" izz="0.024"/>
         </inertial>
     </link>
 
@@ -236,10 +244,18 @@
                 <mesh filename="file://$(find junior_description)/meshes/robitWheel.stl"/>
             </geometry>
             <material name="black"/>
+            <surface>
+                <friction>
+                    <ode>
+                        <mu>0.01</mu>
+                        <mu2>0.01</mu2>
+                    </ode>
+                </friction>
+            </surface>
         </collision>
         <inertial>
-            <mass value="5"/>
-            <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+            <mass value="2"/>
+            <inertia ixx="0.014" ixy="0.0" ixz="0.0" iyy="0.014" iyz="0.0" izz="0.024"/>
         </inertial>
     </link>
 
@@ -256,10 +272,18 @@
                 <mesh filename="file://$(find junior_description)/meshes/robitWheel.stl"/>
             </geometry>
             <material name="black"/>
+            <surface>
+                <friction>
+                    <ode>
+                        <mu>0.01</mu>
+                        <mu2>0.01</mu2>
+                    </ode>
+                </friction>
+            </surface>
         </collision>
         <inertial>
-            <mass value="5"/>
-            <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+            <mass value="2"/>
+            <inertia ixx="0.014" ixy="0.0" ixz="0.0" iyy="0.014" iyz="0.0" izz="0.024"/>
         </inertial>
     </link>
 
@@ -276,13 +300,29 @@
                 <mesh filename="file://$(find junior_description)/meshes/robitWheel.stl"/>
             </geometry>
             <material name="black"/>
+            <surface>
+                <friction>
+                    <ode>
+                        <mu>0.01</mu>
+                        <mu2>0.01</mu2>
+                    </ode>
+                </friction>
+            </surface>
         </collision>
         <inertial>
-            <mass value="5"/>
-            <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+            <mass value="2"/>
+            <inertia ixx="0.014" ixy="0.0" ixz="0.0" iyy="0.014" iyz="0.0" izz="0.024"/>
         </inertial>
     </link>
 
+    <!-- Graveyard of Wheel Inertias
+    
+    Ted v1 : <inertia ixx="0.007" ixy="0.0" ixz="0.0" iyy="0.014" iyz="0.0" izz="0.007"/>
+    Cylinder Math : <inertia ixx="0.014" ixy="0.0" ixz="0.0" iyy="0.014" iyz="0.0" izz="0.024"/>
+    Box Math : <inertia ixx="0.0183" ixy="0.0" ixz="0.0" iyy="0.033" iyz="0.0" izz="0.033"/>
+    Logi v1 : <inertia ixx="0.014" ixy="0.0" ixz="0.0" iyy="0.04" iyz="0.0" izz="0.024"/>
+    
+    -->
 
     <!-- START OF JOINTS -->
     <joint name="ChassisJoint" type="fixed">
@@ -577,10 +617,10 @@
 
             <!-- kinematics -->
             <wheel_separation>0.52</wheel_separation>
-            <wheel_diameter>0.105</wheel_diameter>
+            <wheel_diameter>0.315</wheel_diameter>
 
             <!-- Limits -->
-            <max_wheel_torque>200.0</max_wheel_torque>
+            <max_wheel_torque>40.0</max_wheel_torque>
             <max_wheel_acceleration>10.0</max_wheel_acceleration>
 
             <!-- Output -->
