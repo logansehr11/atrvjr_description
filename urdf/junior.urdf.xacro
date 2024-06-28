@@ -25,7 +25,7 @@
     <link name="Chassis">
         <visual>
             <geometry>
-                <mesh filename="file://$(find junior_description)/meshes/robitChassis.stl"/>
+                <mesh filename="file://$(find junior_description)/meshes/robitChassisVisual.stl"/>
             </geometry>
             <material name="red"/>
         </visual>
@@ -178,7 +178,7 @@
             <material name="silver"/>
         </collision>
         <inertial>
-            <mass value="3"/>
+            <mass value="5"/>
             <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
         </inertial>
     </link>
@@ -292,15 +292,18 @@
     <joint name="BackLidarStandJoint" type="revolute">
         <parent link="BackLidarCase"/>
         <child link="BackLidarStand"/>
-        <origin xyz="0 0 -0.03"/>
+        <origin xyz="0 0 -0.045"/>
         <axis xyz="0 0 1"/>
         <limit lower="-1" upper="1" effort="5" velocity="2"/>
     </joint>
 
-    <joint name="BackLidarHeadJoint" type="fixed">
+    <joint name="BackLidarHeadJoint" type="revolute">
         <parent link="BackLidarStand"/>
         <child link="BackLidarHead"/>
         <origin xyz="0 0 0.05" rpy="0 -3.14 0"/>
+        <axis xyz="0 1 0"/>
+        <dynamics damping="0" friction="0.75"/>
+        <limit lower="-1" upper="1" effort="5" velocity="2"/>
     </joint>
 
     <joint name="AxleLeftFront" type="continuous">
