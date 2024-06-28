@@ -228,6 +228,7 @@
         <inertial>
             <mass value="2"/>
             <inertia ixx="0.014" ixy="0.0" ixz="0.0" iyy="0.014" iyz="0.0" izz="0.024"/>
+            <origin xyz="0 0 0" rpy="1.57 0 0"/>
         </inertial>
     </link>
 
@@ -256,6 +257,7 @@
         <inertial>
             <mass value="2"/>
             <inertia ixx="0.014" ixy="0.0" ixz="0.0" iyy="0.014" iyz="0.0" izz="0.024"/>
+            <origin xyz="0 0 0" rpy="1.57 0 0"/>
         </inertial>
     </link>
 
@@ -284,6 +286,7 @@
         <inertial>
             <mass value="2"/>
             <inertia ixx="0.014" ixy="0.0" ixz="0.0" iyy="0.014" iyz="0.0" izz="0.024"/>
+            <origin xyz="0 0 0" rpy="1.57 0 0"/>
         </inertial>
     </link>
 
@@ -312,6 +315,7 @@
         <inertial>
             <mass value="2"/>
             <inertia ixx="0.014" ixy="0.0" ixz="0.0" iyy="0.014" iyz="0.0" izz="0.024"/>
+            <origin xyz="0 0 0" rpy="1.57 0 0"/>
         </inertial>
     </link>
 
@@ -616,12 +620,12 @@
             <right_joint>AxleRightBack</right_joint>
 
             <!-- kinematics -->
-            <wheel_separation>0.52</wheel_separation>
+            <wheel_separation>0.435</wheel_separation>
             <wheel_diameter>0.315</wheel_diameter>
 
             <!-- Limits -->
             <max_wheel_torque>40.0</max_wheel_torque>
-            <max_wheel_acceleration>10.0</max_wheel_acceleration>
+            <max_wheel_acceleration>5.0</max_wheel_acceleration>
 
             <!-- Output -->
             <odometry_frame>odom</odometry_frame>
