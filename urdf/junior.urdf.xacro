@@ -183,6 +183,26 @@
         </inertial>
     </link>
 
+    <!-- Risers Link -->
+    <link name="Risers">
+        <visual>
+            <geometry>
+                <mesh filename="file://$(find junior_description)/meshes/robitRiserVisual.stl"/>
+            </geometry>
+            <material name="black"/>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="file://$(find junior_description)/meshes/robitRiserCollision.stl"/>
+            </geometry>
+            <material name="black"/>
+        </collision>
+        <inertial>
+            <mass value="1"/>
+            <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+        </inertial>
+    </link>
+
     <!-- Left Front Link -->
     <link name="WheelLeftFront">
         <visual>
@@ -286,7 +306,7 @@
     <joint name="BackLidarHolster" type="fixed">
         <parent link="Chassis"/>
         <child link="BackLidarCase"/>
-        <origin xyz="-0.285 0 0.319"/>
+        <origin xyz="-0.285 0 0.339"/>
     </joint>
 
     <joint name="BackLidarStandJoint" type="revolute">
@@ -304,6 +324,12 @@
         <axis xyz="0 1 0"/>
         <dynamics damping="0" friction="0.75"/>
         <limit lower="-1" upper="1" effort="5" velocity="2"/>
+    </joint>
+
+    <joint name="RisersJoint" type="fixed">
+        <parent link="Chassis"/>
+        <child link="Risers"/>
+        <origin xyz="-0.057 0 0.2655"/>
     </joint>
 
     <joint name="AxleLeftFront" type="continuous">
@@ -482,6 +508,17 @@
             <material>
                 <diffuse>0.77 0.78 0.78 1</diffuse>
                 <ambient>0.385 0.39 0.39 1</ambient>
+                <emissive>0 0 0 0</emissive>
+            </material>
+        </visual>
+    </gazebo>
+
+    <!-- Risers -->
+    <gazebo reference="Risers">
+        <visual>
+            <material>
+                <diffuse>0.2 0.2 0.2 1</diffuse>
+                <ambient>0.1 0.1 0.1 1</ambient>
                 <emissive>0 0 0 0</emissive>
             </material>
         </visual>
