@@ -122,17 +122,17 @@
         </inertial>
     </link>
 
-    <!-- Back Lidar Case Link -->
-    <link name="BackLidarCase">
+    <!-- Back Camera Case Link -->
+    <link name="BackCameraCase">
         <visual>
             <geometry>
-                <mesh filename="file://$(find junior_description)/meshes/robitBackLidarCase.stl"/>
+                <mesh filename="file://$(find junior_description)/meshes/robitBackCameraCase.stl"/>
             </geometry>
             <material name="black"/>
         </visual>
         <collision>
             <geometry>
-                <mesh filename="file://$(find junior_description)/meshes/robitBackLidarCase.stl"/>
+                <mesh filename="file://$(find junior_description)/meshes/robitBackCameraCase.stl"/>
             </geometry>
             <material name="black"/>
         </collision>
@@ -142,17 +142,17 @@
         </inertial>
     </link>
 
-    <!-- Back Lidar Stand Link -->
-    <link name="BackLidarStand">
+    <!-- Back Camera Stand Link -->
+    <link name="BackCameraStand">
         <visual>
             <geometry>
-                <mesh filename="file://$(find junior_description)/meshes/robitBackLidarStand.stl"/>
+                <mesh filename="file://$(find junior_description)/meshes/robitBackCameraStand.stl"/>
             </geometry>
             <material name="silver"/>
         </visual>
         <collision>
             <geometry>
-                <mesh filename="file://$(find junior_description)/meshes/robitBackLidarStand.stl"/>
+                <mesh filename="file://$(find junior_description)/meshes/robitBackCameraStand.stl"/>
             </geometry>
             <material name="silver"/>
         </collision>
@@ -162,17 +162,17 @@
         </inertial>
     </link>
 
-    <!-- Back Lidar Head -->
-    <link name="BackLidarHead">
+    <!-- Back Camera Head Link -->
+    <link name="BackCameraHead">
         <visual>
             <geometry>
-                <mesh filename="file://$(find junior_description)/meshes/robitBackLidarHead.stl"/>
+                <mesh filename="file://$(find junior_description)/meshes/robitBackCameraHead.stl"/>
             </geometry>
             <material name="silver"/>
         </visual>
         <collision>
             <geometry>
-                <mesh filename="file://$(find junior_description)/meshes/robitBackLidarHead.stl"/>
+                <mesh filename="file://$(find junior_description)/meshes/robitBackCameraHead.stl"/>
             </geometry>
             <material name="silver"/>
         </collision>
@@ -212,9 +212,10 @@
         </visual>
         <collision>
             <geometry>
-                <mesh filename="file://$(find junior_description)/meshes/robitWheelCollision.dae"/>
+                <!-- <mesh filename="file://$(find junior_description)/meshes/robitWheelCollision.dae"/> -->
+                <cylinder length="0.105" radius="0.1575"/>
             </geometry>
-            <!-- <origin xyz="0 0 0" rpy="1.57 0 0"/> -->
+            <origin xyz="0 0 0" rpy="1.57079632679 0 0"/>
             <material name="black"/>
             <surface>
                 <friction>
@@ -231,7 +232,7 @@
         <inertial>
             <mass value="2"/>
             <inertia ixx="0.014240625" ixy="0.0" ixz="0.0" iyy="0.014240625" iyz="0.0" izz="0.02480625"/>
-            <origin xyz="0 0 0" rpy="1.57 0 0"/>
+            <origin xyz="0 0 0" rpy="1.57079632679 0 0"/>
         </inertial>
     </link>
 
@@ -245,9 +246,10 @@
         </visual>
         <collision>
             <geometry>
-                <mesh filename="file://$(find junior_description)/meshes/robitWheelCollision.dae"/>
+                <!-- <mesh filename="file://$(find junior_description)/meshes/robitWheelCollision.dae"/> -->
+                <cylinder length="0.105" radius="0.1575"/>
             </geometry>
-            <!-- <origin xyz="0 0 0" rpy="1.57 0 0"/> -->
+            <origin xyz="0 0 0" rpy="1.57079632679 0 0"/>
             <material name="black"/>
             <surface>
                 <friction>
@@ -264,7 +266,7 @@
         <inertial>
             <mass value="2"/>
             <inertia ixx="0.014240625" ixy="0.0" ixz="0.0" iyy="0.014240625" iyz="0.0" izz="0.02480625"/>
-            <origin xyz="0 0 0" rpy="1.57 0 0"/>
+            <origin xyz="0 0 0" rpy="1.57079632679 0 0"/>
         </inertial>
     </link>
 
@@ -278,9 +280,10 @@
         </visual>
         <collision>
             <geometry>
-                <mesh filename="file://$(find junior_description)/meshes/robitWheelCollision.dae"/>
+                <!-- <mesh filename="file://$(find junior_description)/meshes/robitWheelCollision.dae"/> -->
+                <cylinder length="0.105" radius="0.1575"/>
             </geometry>
-            <!-- <origin xyz="0 0 0" rpy="1.57 0 0"/> -->
+            <origin xyz="0 0 0" rpy="1.57079632679 0 0"/>
             <material name="black"/>
             <surface>
                 <friction>
@@ -297,7 +300,7 @@
         <inertial>
             <mass value="2"/>
             <inertia ixx="0.014240625" ixy="0.0" ixz="0.0" iyy="0.014240625" iyz="0.0" izz="0.02480625"/>
-            <origin xyz="0 0 0" rpy="1.57 0 0"/>
+            <origin xyz="0 0 0" rpy="1.57079632679 0 0"/>
         </inertial>
     </link>
 
@@ -311,9 +314,10 @@
         </visual>
         <collision>
             <geometry>
-                <mesh filename="file://$(find junior_description)/meshes/robitWheelCollision.dae"/>
+                <!-- <mesh filename="file://$(find junior_description)/meshes/robitWheelCollision.dae"/> -->
+                <cylinder length="0.105" radius="0.1575"/>
             </geometry>
-            <!-- <origin xyz="0 0 0" rpy="1.57 0 0"/> -->
+            <origin xyz="0 0 0" rpy="1.57079632679 0 0"/>
             <material name="black"/>
             <surface>
                 <friction>
@@ -330,7 +334,7 @@
         <inertial>
             <mass value="2"/>
             <inertia ixx="0.014240625" ixy="0.0" ixz="0.0" iyy="0.014240625" iyz="0.0" izz="0.02480625"/>
-            <origin xyz="0 0 0" rpy="1.57 0 0"/>
+            <origin xyz="0 0 0" rpy="1.57079632679 0 0"/>
         </inertial>
     </link>
 
@@ -341,6 +345,7 @@
     Box Math : <inertia ixx="0.0183" ixy="0.0" ixz="0.0" iyy="0.033" iyz="0.0" izz="0.033"/>
     Logi v1 : <inertia ixx="0.014" ixy="0.0" ixz="0.0" iyy="0.04" iyz="0.0" izz="0.024"/>
     CURRENT: Precision Cylinder : <inertia ixx="0.014240625" ixy="0.0" ixz="0.0" iyy="0.014240625" iyz="0.0" izz="0.02480625"/>
+    Gazebo Cylinder : <inertia ixx="0.15" ixy="0.0" ixz="0.0" iyy="0.15" iyz="0.0" izz="0.13"/>
     
     -->
 
@@ -363,27 +368,27 @@
         <origin xyz="0.075 0 0"/> 
     </joint>
 
-    <joint name="BackLidarHolster" type="fixed">
+    <joint name="BackCameraHolster" type="fixed">
         <parent link="Chassis"/>
-        <child link="BackLidarCase"/>
+        <child link="BackCameraCase"/>
         <origin xyz="-0.285 0 0.339"/>
     </joint>
 
-    <joint name="BackLidarStandJoint" type="revolute">
-        <parent link="BackLidarCase"/>
-        <child link="BackLidarStand"/>
+    <joint name="BackCameraStandJoint" type="fixed">
+        <parent link="BackCameraCase"/>
+        <child link="BackCameraStand"/>
         <origin xyz="0 0 -0.045"/>
         <axis xyz="0 0 1"/>
-        <limit lower="-1" upper="1" effort="5" velocity="2"/>
+        <!-- <limit lower="-1" upper="1" effort="5" velocity="2"/>  FOR REVOLUTE -->
     </joint>
 
-    <joint name="BackLidarHeadJoint" type="revolute">
-        <parent link="BackLidarStand"/>
-        <child link="BackLidarHead"/>
+    <joint name="BackCameraHeadJoint" type="fixed">
+        <parent link="BackCameraStand"/>
+        <child link="BackCameraHead"/>
         <origin xyz="0 0 0.05" rpy="0 -3.14 0"/>
         <axis xyz="0 1 0"/>
-        <dynamics damping="0" friction="0.75"/>
-        <limit lower="-1" upper="1" effort="5" velocity="2"/>
+        <!-- <dynamics damping="0" friction="0.75"/>
+        <limit lower="-1" upper="1" effort="5" velocity="2"/> FOR REVOLUTE -->
     </joint>
 
     <joint name="RisersJoint" type="fixed">
@@ -508,8 +513,8 @@
         </visual>
     </gazebo>
 
-    <!-- Back Lidar Case -->
-    <gazebo reference="BackLidarCase">
+    <!-- Back Camera Case -->
+    <gazebo reference="BackCameraCase">
         <visual>
             <material>
                 <diffuse>0.2 0.2 0.2 1</diffuse>
@@ -520,7 +525,7 @@
     </gazebo>
 
     <!-- Back Lidar Stand -->
-    <gazebo reference="BackLidarStand">
+    <gazebo reference="BackCameraStand">
         <visual>
             <material>
                 <diffuse>0.77 0.78 0.78 1</diffuse>
@@ -531,7 +536,7 @@
     </gazebo>
 
     <!-- Back Lidar Head -->
-    <gazebo reference="BackLidarHead">
+    <gazebo reference="BackCameraHead">
         <sensor name="blaser" type="ray">
             <pose> 0 0 0 0 0 </pose>
             <visualize>true</visualize>
@@ -554,7 +559,7 @@
                     <argument>-/out:=scan</argument>
                 </ros>
                 <output_type>sensor_msgs/LaserScan</output_type>
-                <frame_name>BackLidarHead</frame_name>
+                <frame_name>BackCameraHead</frame_name>
             </plugin>
         </sensor>
         <visual>
