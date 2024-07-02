@@ -202,6 +202,34 @@
         </inertial>
     </link>
 
+    <!-- Back Lidar Link -->
+    <link name="BackLidar">
+        <visual>
+            <geometry>
+                <mesh filename="file://$(find junior_description)/meshes/hokuyo_urg_04lx.dae"/>
+            </geometry>
+            <material name="black"/>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="file://$(find junior_description)/meshes/hokuyo_urg_04lx.dae"/>
+            </geometry>
+            <material name="black"/>
+        </collision>
+        <inertial>
+            <mass value="0.2"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+    </link>
+
+    <!-- Back Lidar Scanner Link -->
+    <link name="BackLidarScanner">
+        <inertial>
+            <mass value="0.001"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+    </link>
+
     <!-- Left Front Link -->
     <link name="WheelLeftFront">
         <visual>
@@ -212,10 +240,10 @@
         </visual>
         <collision>
             <geometry>
-                <!-- <mesh filename="file://$(find junior_description)/meshes/robitWheelCollision.dae"/> -->
-                <cylinder length="0.105" radius="0.1575"/>
+                <mesh filename="file://$(find junior_description)/meshes/robitWheelCollision.dae"/>
+                <!-- <cylinder length="0.105" radius="0.1575"/> -->
             </geometry>
-            <origin xyz="0 0 0" rpy="1.57079632679 0 0"/>
+            <!-- <origin xyz="0 0 0" rpy="1.57079632679 0 0"/> -->
             <material name="black"/>
             <surface>
                 <friction>
@@ -246,10 +274,10 @@
         </visual>
         <collision>
             <geometry>
-                <!-- <mesh filename="file://$(find junior_description)/meshes/robitWheelCollision.dae"/> -->
-                <cylinder length="0.105" radius="0.1575"/>
+                <mesh filename="file://$(find junior_description)/meshes/robitWheelCollision.dae"/>
+                <!-- <cylinder length="0.105" radius="0.1575"/> -->
             </geometry>
-            <origin xyz="0 0 0" rpy="1.57079632679 0 0"/>
+            <!-- <origin xyz="0 0 0" rpy="1.57079632679 0 0"/> -->
             <material name="black"/>
             <surface>
                 <friction>
@@ -280,10 +308,10 @@
         </visual>
         <collision>
             <geometry>
-                <!-- <mesh filename="file://$(find junior_description)/meshes/robitWheelCollision.dae"/> -->
-                <cylinder length="0.105" radius="0.1575"/>
+                <mesh filename="file://$(find junior_description)/meshes/robitWheelCollision.dae"/>
+                <!-- <cylinder length="0.105" radius="0.1575"/> -->
             </geometry>
-            <origin xyz="0 0 0" rpy="1.57079632679 0 0"/>
+            <!-- <origin xyz="0 0 0" rpy="1.57079632679 0 0"/> -->
             <material name="black"/>
             <surface>
                 <friction>
@@ -314,10 +342,10 @@
         </visual>
         <collision>
             <geometry>
-                <!-- <mesh filename="file://$(find junior_description)/meshes/robitWheelCollision.dae"/> -->
-                <cylinder length="0.105" radius="0.1575"/>
+                <mesh filename="file://$(find junior_description)/meshes/robitWheelCollision.dae"/>
+                <!-- <cylinder length="0.105" radius="0.1575"/> -->
             </geometry>
-            <origin xyz="0 0 0" rpy="1.57079632679 0 0"/>
+            <!-- <origin xyz="0 0 0" rpy="1.57079632679 0 0"/> -->
             <material name="black"/>
             <surface>
                 <friction>
@@ -395,6 +423,18 @@
         <parent link="Chassis"/>
         <child link="Risers"/>
         <origin xyz="-0.057 0 0.2655"/>
+    </joint>
+
+    <joint name="BackLidarJoint" type="fixed">
+        <parent link="BackCameraCase"/>
+        <child link="BackLidar"/>
+        <origin xyz="0 0 0.045" rpy="0 0 -3.14"/>
+    </joint>
+
+    <joint name="BackLidarScannerJoint" type="fixed">
+        <parent link="BackLidar"/>
+        <child link="BackLidarScanner"/>
+        <origin xyz="0 0 0.03" rpy="0 0 0"/>
     </joint>
 
     <joint name="AxleLeftFront" type="continuous">
@@ -481,7 +521,7 @@
     <gazebo reference="FrontLidarGlass">
         <sensor name="laser" type="ray">
             <pose> 0 0 0 0 0 0 </pose>
-            <visualize>true</visualize>
+            <visualize>false</visualize> <!-- TURN TO TRUE WHEN TESTING THE LIDAR -->
             <update_rate>10</update_rate>
             <ray>
                 <scan>
@@ -537,31 +577,6 @@
 
     <!-- Back Lidar Head -->
     <gazebo reference="BackCameraHead">
-        <sensor name="blaser" type="ray">
-            <pose> 0 0 0 0 0 </pose>
-            <visualize>true</visualize>
-            <update_rate>10</update_rate>
-            <ray>
-                <scan>
-                    <horizontal>
-                    <samples>120</samples>
-                    <min_angle>-0.52</min_angle>
-                    <max_angle>0.52</max_angle>
-                    </horizontal>
-                </scan>
-                <range>
-                    <min>0.1</min>
-                    <max>2</max>
-                </range>
-            </ray>
-            <plugin name="bl_controller" filename="libgazebo_ros_ray_sensor.so">
-                <ros>
-                    <argument>-/out:=scan</argument>
-                </ros>
-                <output_type>sensor_msgs/LaserScan</output_type>
-                <frame_name>BackCameraHead</frame_name>
-            </plugin>
-        </sensor>
         <visual>
             <material>
                 <diffuse>0.77 0.78 0.78 1</diffuse>
@@ -580,6 +595,46 @@
                 <emissive>0 0 0 0</emissive>
             </material>
         </visual>
+    </gazebo>
+
+    <!-- Back Lidar -->
+    <gazebo reference="BackLidar">
+    </gazebo>
+
+    <!-- Back Lidar Scanner -->
+    <gazebo reference="BackLidarScanner">
+        <sensor name="blaser" type="ray">
+            <pose>0 0 0 0 0 0</pose>
+            <visualize>false</visualize> <!-- TURN TO TRUE WHEN TESTING THE LIDAR -->
+            <update_rate>10</update_rate>
+            <ray>
+                <scan>
+                    <horizontal>
+                        <samples>640</samples>
+                        <resolution>1</resolution>
+                        <min_angle>-2.3561</min_angle>
+                        <max_angle>2.3561</max_angle>
+                    </horizontal>
+                </scan>
+                <range>
+                    <min>0.035</min> <!-- Was 0.02 -->
+                    <max>4.0</max>
+                    <resolution>0.00628318531</resolution>
+                </range>
+                <noise>
+                    <type>gaussian</type>
+                    <mean>0.0</mean>
+                    <stddev>0.01</stddev>
+                </noise>
+            </ray>
+			<plugin name="bl_controller" filename="libgazebo_ros_ray_sensor.so">
+                <ros>
+                    <argument>-/out:=scan</argument>
+                </ros>
+				<output_type>sensor_msgs/LaserScan</output_type>
+                <frame_name>BackLidar</frame_name>
+			</plugin>
+		</sensor>
     </gazebo>
 
     <!-- WHEELS -->
