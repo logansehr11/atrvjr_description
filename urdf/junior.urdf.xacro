@@ -30,7 +30,7 @@
         </visual>
         <collision>
             <geometry>
-                <mesh filename="file://$(find junior_description)/meshes/robitChassis.stl"/>
+                <mesh filename="file://$(find junior_description)/meshes/robitChassisCollision.dae"/>
                <!-- <box size="0.642 0.39 0.412"/> -->
             </geometry>
             <material name="red"/>
@@ -40,48 +40,6 @@
             <inertia ixx="1.20932883" ixy="0.0" ixz="0.0" iyy="2.18651931" iyz="0.0" izz="2.18651931"/>
         </inertial>
     </link>
-
-    <!-- Front Bumper Link -->
-    <link name="FrontBumper">
-        <visual>
-            <geometry>
-                <mesh filename="file://$(find junior_description)/meshes/robitFrontBumper.stl"/>
-            </geometry>
-            <material name="black"/>
-        </visual>
-        <collision>
-            <geometry>
-                <mesh filename="file://$(find junior_description)/meshes/robitFrontBumper.stl"/>
-            </geometry>
-            <material name="black"/>
-        </collision>
-        <inertial>
-            <mass value="0.01"/>
-            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
-        </inertial>
-    </link>
-
-
-    <!-- Back Bumper Link -->
-    <link name="BackBumper">
-        <visual>
-            <geometry>
-                <mesh filename="file://$(find junior_description)/meshes/robitBackBumper.stl"/>
-            </geometry>
-            <material name="black"/>
-        </visual>
-        <collision>
-            <geometry>
-                <mesh filename="file://$(find junior_description)/meshes/robitBackBumper.stl"/>
-            </geometry>
-            <material name="black"/>
-        </collision>
-        <inertial>
-            <mass value="0.01"/>
-            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
-        </inertial>
-    </link>
-
 
     <!-- Front Lidar Link -->
     <link name="FrontLidar">
@@ -183,26 +141,6 @@
         </inertial>
     </link>
 
-    <!-- Risers Link -->
-    <link name="Risers">
-        <visual>
-            <geometry>
-                <mesh filename="file://$(find junior_description)/meshes/robitRiserVisual.stl"/>
-            </geometry>
-            <material name="black"/>
-        </visual>
-        <collision>
-            <geometry>
-                <mesh filename="file://$(find junior_description)/meshes/robitRiserCollision.stl"/>
-            </geometry>
-            <material name="black"/>
-        </collision>
-        <inertial>
-            <mass value="0.01"/>
-            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
-        </inertial>
-    </link>
-
     <!-- Back Lidar Link -->
     <link name="BackLidar">
         <visual>
@@ -235,11 +173,12 @@
     <link name="WheelLeftFront">
         <visual>
             <geometry>
-                <mesh filename="file://$(find junior_description)/meshes/robitWheel.stl"/>
+                <mesh filename="file://$(find junior_description)/meshes/robitWheel.dae"/>
                 <!-- <cylinder length="0.105" radius="0.1575"/> -->
             </geometry>
             <material name="black"/>
             <!-- <origin xyz="0 0 0" rpy="1.57079632679 0 0"/>  Comment Out for Mesh -->
+            <origin rpy="-3.14159265359 0 0"/>
         </visual>
         <collision>
             <geometry>
@@ -271,7 +210,7 @@
     <link name="WheelRightFront">
         <visual>
             <geometry>
-                <mesh filename="file://$(find junior_description)/meshes/robitWheel.stl"/>
+                <mesh filename="file://$(find junior_description)/meshes/robitWheel.dae"/>
                 <!-- <cylinder length="0.105" radius="0.1575"/> -->
             </geometry>
             <material name="black"/>
@@ -307,11 +246,12 @@
     <link name="WheelLeftBack">
         <visual>
             <geometry>
-                <mesh filename="file://$(find junior_description)/meshes/robitWheel.stl"/>
+                <mesh filename="file://$(find junior_description)/meshes/robitWheel.dae"/>
                 <!-- <cylinder length="0.105" radius="0.1575"/> -->
             </geometry>
             <material name="black"/>
             <!-- <origin xyz="0 0 0" rpy="1.57079632679 0 0"/>  Comment Out for Mesh -->
+            <origin rpy="-3.14159265359 0 0"/>
         </visual>
         <collision>
             <geometry>
@@ -343,7 +283,7 @@
     <link name="WheelRightBack">
         <visual>
             <geometry>
-                <mesh filename="file://$(find junior_description)/meshes/robitWheel.stl"/>
+                <mesh filename="file://$(find junior_description)/meshes/robitWheel.dae"/>
                 <!-- <cylinder length="0.105" radius="0.1575"/> -->
             </geometry>
             <material name="black"/>
@@ -408,7 +348,7 @@
     <joint name="BackCameraHolster" type="fixed">
         <parent link="Chassis"/>
         <child link="BackCameraCase"/>
-        <origin xyz="-0.285 0 0.339"/>
+        <origin xyz="-0.285 0 0.311"/>
     </joint>
 
     <joint name="BackCameraStandJoint" type="fixed">
@@ -426,12 +366,6 @@
         <axis xyz="0 1 0"/>
         <!-- <dynamics damping="0" friction="0.75"/>
         <limit lower="-1" upper="1" effort="5" velocity="2"/> FOR REVOLUTE -->
-    </joint>
-
-    <joint name="RisersJoint" type="fixed">
-        <parent link="Chassis"/>
-        <child link="Risers"/>
-        <origin xyz="-0.057 0 0.2655"/>
     </joint>
 
     <joint name="BackLidarJoint" type="fixed">
@@ -472,18 +406,6 @@
         <child link="WheelRightBack"/>
         <origin xyz="-0.193 -0.2635 -0.07" rpy="0 0 0"/>
         <axis xyz="0 1 0"/>
-    </joint>
-
-    <joint name="FrontBumperLoc" type="fixed">
-        <parent link="Chassis"/>
-        <child link="FrontBumper"/>
-        <origin xyz="0.321 0 0.025" rpy="0 0 0"/>
-    </joint>
-
-    <joint name="BackBumperLoc" type="fixed">
-        <parent link="Chassis"/>
-        <child link="BackBumper"/>
-        <origin xyz="-0.321 0 -0.0795" rpy="0 0 0"/>
     </joint>
     <!-- END OF JOINTS -->
 
