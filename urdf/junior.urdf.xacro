@@ -336,7 +336,7 @@
     <joint name="FrontLidarHolster" type="fixed">
         <parent link="Chassis"/>
         <child link="FrontLidar"/>
-        <origin xyz="0.321 0 -0.0197"/> 
+        <origin xyz="0.321 0 -0.098"/> 
     </joint>
 
     <joint name="FrontLidarVision" type="fixed">
@@ -452,7 +452,7 @@
     <gazebo reference="FrontLidarGlass">
         <sensor name="laser" type="ray">
             <pose> 0 0 0 0 0 0 </pose>
-            <visualize>false</visualize> <!-- TURN TO TRUE WHEN TESTING THE LIDAR -->
+            <visualize>true</visualize> <!-- TURN TO TRUE WHEN TESTING THE LIDAR -->
             <update_rate>10</update_rate>
             <ray>
                 <scan>
@@ -626,7 +626,7 @@
             <max_wheel_acceleration>0.7</max_wheel_acceleration>
             <!-- Max Teleop Speeds
                 Forward Speed: 1.8 m/s
-                Reverse Speed: 0 m/s
+                Reverse Speed: 0.2 m/s
                 Left Turn Speed: 7 m/s
                 Right Turn Speed: 7 m/s
             -->
