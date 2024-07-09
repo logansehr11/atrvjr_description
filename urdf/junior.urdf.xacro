@@ -626,9 +626,9 @@
             <max_wheel_acceleration>0.7</max_wheel_acceleration>
             <!-- Max Teleop Speeds
                 Forward Speed: 1.8 m/s
-                Reverse Speed: 0.2 m/s
-                Left Turn Speed: 7 m/s
-                Right Turn Speed: 7 m/s
+                Reverse Speed: 0.06 m/s
+                Left Turn Speed: 1 m/s
+                Right Turn Speed: 1 m/s
             -->
 
             <odometry_frame>odom</odometry_frame>
