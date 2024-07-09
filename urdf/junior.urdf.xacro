@@ -30,7 +30,7 @@
         </visual>
         <collision>
             <geometry>
-                <mesh filename="file://$(find junior_description)/meshes/robitChassisCollision.dae"/>
+                <mesh filename="file://$(find junior_description)/meshes/robitChassisCollision.stl"/>
                <!-- <box size="0.642 0.39 0.412"/> -->
             </geometry>
             <material name="red"/>
@@ -452,7 +452,7 @@
     <gazebo reference="FrontLidarGlass">
         <sensor name="laser" type="ray">
             <pose> 0 0 0 0 0 0 </pose>
-            <visualize>true</visualize> <!-- TURN TO TRUE WHEN TESTING THE LIDAR -->
+            <visualize>false</visualize> <!-- TURN TO TRUE WHEN TESTING THE LIDAR -->
             <update_rate>10</update_rate>
             <ray>
                 <scan>
@@ -463,7 +463,7 @@
                     </horizontal>
                 </scan>
                 <range>
-                    <min>0.2</min>
+                    <min>0.1</min>
                     <max>3</max>
                 </range>
             </ray>
