@@ -174,10 +174,8 @@
         <visual>
             <geometry>
                 <mesh filename="file://$(find junior_description)/meshes/robitWheel.dae"/>
-                <!-- <cylinder length="0.105" radius="0.1575"/> -->
             </geometry>
             <material name="black"/>
-            <!-- <origin xyz="0 0 0" rpy="1.57079632679 0 0"/>  Comment Out for Mesh -->
             <origin rpy="-3.14159265359 0 0"/>
         </visual>
         <collision>
@@ -187,17 +185,6 @@
             </geometry>
             <!-- <origin xyz="0 0 0" rpy="1.57079632679 0 0"/> -->
             <material name="black"/>
-            <surface>
-                <friction>
-                    <ode>
-                        <mu>0.7</mu>
-                        <mu2>0.7</mu2>
-                        <kp>1000000</kp>
-                        <kd>1.0</kd>
-                        <fdir>1 0 0</fdir>
-                    </ode>
-                </friction>
-            </surface>
         </collision>
         <inertial>
             <mass value="2"/>
@@ -211,10 +198,8 @@
         <visual>
             <geometry>
                 <mesh filename="file://$(find junior_description)/meshes/robitWheel.dae"/>
-                <!-- <cylinder length="0.105" radius="0.1575"/> -->
             </geometry>
             <material name="black"/>
-            <!-- <origin xyz="0 0 0" rpy="1.57079632679 0 0"/>  Comment Out for Mesh -->
         </visual>
         <collision>
             <geometry>
@@ -223,17 +208,6 @@
             </geometry>
             <!-- <origin xyz="0 0 0" rpy="1.57079632679 0 0"/> -->
             <material name="black"/>
-            <surface>
-                <friction>
-                    <ode>
-                        <mu>0.7</mu>
-                        <mu2>0.7</mu2>
-                        <kp>1000000</kp>
-                        <kd>1.0</kd>
-                        <fdir>1 0 0</fdir>
-                    </ode>
-                </friction>
-            </surface>
         </collision>
         <inertial>
             <mass value="2"/>
@@ -247,10 +221,8 @@
         <visual>
             <geometry>
                 <mesh filename="file://$(find junior_description)/meshes/robitWheel.dae"/>
-                <!-- <cylinder length="0.105" radius="0.1575"/> -->
             </geometry>
             <material name="black"/>
-            <!-- <origin xyz="0 0 0" rpy="1.57079632679 0 0"/>  Comment Out for Mesh -->
             <origin rpy="-3.14159265359 0 0"/>
         </visual>
         <collision>
@@ -260,17 +232,6 @@
             </geometry>
             <!-- <origin xyz="0 0 0" rpy="1.57079632679 0 0"/> -->
             <material name="black"/>
-            <surface>
-                <friction>
-                    <ode>
-                        <mu>0.7</mu>
-                        <mu2>0.7</mu2>
-                        <kp>1000000</kp>
-                        <kd>1.0</kd>
-                        <fdir>1 0 0</fdir>
-                    </ode>
-                </friction>
-            </surface>
         </collision>
         <inertial>
             <mass value="2"/>
@@ -284,10 +245,8 @@
         <visual>
             <geometry>
                 <mesh filename="file://$(find junior_description)/meshes/robitWheel.dae"/>
-                <!-- <cylinder length="0.105" radius="0.1575"/> -->
             </geometry>
             <material name="black"/>
-            <!-- <origin xyz="0 0 0" rpy="1.57079632679 0 0"/>  Comment Out for Mesh -->
         </visual>
         <collision>
             <geometry>
@@ -296,17 +255,6 @@
             </geometry>
             <!-- <origin xyz="0 0 0" rpy="1.57079632679 0 0"/> -->
             <material name="black"/>
-            <surface>
-                <friction>
-                    <ode>
-                        <mu>0.7</mu>
-                        <mu2>0.7</mu2>
-                        <kp>1000000</kp>
-                        <kd>1.0</kd>
-                        <fdir>1 0 0</fdir>
-                    </ode>
-                </friction>
-            </surface>
         </collision>
         <inertial>
             <mass value="2"/>
@@ -314,17 +262,6 @@
             <origin xyz="0 0 0" rpy="1.57079632679 0 0"/>
         </inertial>
     </link>
-
-    <!-- Graveyard of Wheel Inertias
-    
-    Ted v1 : <inertia ixx="0.007" ixy="0.0" ixz="0.0" iyy="0.014" iyz="0.0" izz="0.007"/>
-    Cylinder Math : <inertia ixx="0.014" ixy="0.0" ixz="0.0" iyy="0.014" iyz="0.0" izz="0.024"/>
-    Box Math : <inertia ixx="0.0183" ixy="0.0" ixz="0.0" iyy="0.033" iyz="0.0" izz="0.033"/>
-    Logi v1 : <inertia ixx="0.014" ixy="0.0" ixz="0.0" iyy="0.04" iyz="0.0" izz="0.024"/>
-    CURRENT: Precision Cylinder : <inertia ixx="0.014240625" ixy="0.0" ixz="0.0" iyy="0.014240625" iyz="0.0" izz="0.02480625"/>
-    Gazebo Cylinder : <inertia ixx="0.15" ixy="0.0" ixz="0.0" iyy="0.15" iyz="0.0" izz="0.13"/>
-    
-    -->
 
     <!-- START OF JOINTS -->
     <joint name="ChassisJoint" type="fixed">
@@ -415,28 +352,6 @@
     <gazebo reference="Chassis">
     </gazebo>
 
-    <!-- Front Bumper -->
-    <gazebo reference="FrontBumper">
-        <visual>
-            <material>
-                <diffuse>0.2 0.2 0.2 1</diffuse>
-                <ambient>0.1 0.1 0.1 1</ambient>
-                <emissive>0 0 0 0</emissive>
-            </material>
-        </visual>
-    </gazebo>
-
-    <!-- Back Bumper -->
-    <gazebo reference="BackBumper">
-        <visual>
-            <material>
-                <diffuse>0.2 0.2 0.2 1</diffuse>
-                <ambient>0.1 0.1 0.1 1</ambient>
-                <emissive>0 0 0 0</emissive>
-            </material>
-        </visual>
-    </gazebo>
-
     <!-- Front Lidar Case -->
     <gazebo reference="FrontLidar">
         <visual>
@@ -495,7 +410,7 @@
         </visual>
     </gazebo>
 
-    <!-- Back Lidar Stand -->
+    <!-- Back Camera Stand -->
     <gazebo reference="BackCameraStand">
         <visual>
             <material>
@@ -506,23 +421,12 @@
         </visual>
     </gazebo>
 
-    <!-- Back Lidar Head -->
+    <!-- Back Camera Head -->
     <gazebo reference="BackCameraHead">
         <visual>
             <material>
                 <diffuse>0.77 0.78 0.78 1</diffuse>
                 <ambient>0.385 0.39 0.39 1</ambient>
-                <emissive>0 0 0 0</emissive>
-            </material>
-        </visual>
-    </gazebo>
-
-    <!-- Risers -->
-    <gazebo reference="Risers">
-        <visual>
-            <material>
-                <diffuse>0.2 0.2 0.2 1</diffuse>
-                <ambient>0.1 0.1 0.1 1</ambient>
                 <emissive>0 0 0 0</emissive>
             </material>
         </visual>
@@ -570,75 +474,108 @@
 
     <!-- WHEELS -->
     <gazebo reference="WheelLeftFront">
-        <visual>
-            <material>
-                <diffuse>0.2 0.2 0.2 1</diffuse>
-                <ambient>0.1 0.1 0.1 1</ambient>
-                <emissive>0 0 0 0</emissive>
-            </material>
-        </visual>
+        <collision>
+            <surface>
+                <friction>
+                    <ode>
+                        <mu>1.0</mu>
+                        <mu2>1.0</mu2>
+                        <kp>10000000</kp>
+                        <kd>1</kd>
+                    </ode>
+                </friction>
+            </surface>
+        </collision>
     </gazebo>
 
     <gazebo reference="WheelRightFront">
-        <visual>
-            <material>
-                <diffuse>0.2 0.2 0.2 1</diffuse>
-                <ambient>0.1 0.1 0.1 1</ambient>
-                <emissive>0 0 0 0</emissive>
-            </material>
-        </visual>
+        <collision>
+            <surface>
+                <friction>
+                    <ode>
+                        <mu>1.0</mu>
+                        <mu2>1.0</mu2>
+                        <kp>10000000</kp>
+                        <kd>1</kd>
+                    </ode>
+                </friction>
+            </surface>
+        </collision>
     </gazebo>
 
     <gazebo reference="WheelLeftBack">
-        <visual>
-            <material>
-                <diffuse>0.2 0.2 0.2 1</diffuse>
-                <ambient>0.1 0.1 0.1 1</ambient>
-                <emissive>0 0 0 0</emissive>
-            </material>
-        </visual>
+        <collision>
+            <surface>
+                <friction>
+                    <ode>
+                        <mu>1.0</mu>
+                        <mu2>1.0</mu2>
+                        <kp>10000000</kp>
+                        <kd>1</kd>
+                    </ode>
+                </friction>
+            </surface>
+        </collision>
     </gazebo>
 
     <gazebo reference="WheelRightBack">
-        <visual>
-            <material>
-                <diffuse>0.2 0.2 0.2 1</diffuse>
-                <ambient>0.1 0.1 0.1 1</ambient>
-                <emissive>0 0 0 0</emissive>
-            </material>
-        </visual>
+        <collision>
+            <surface>
+                <friction>
+                    <ode>
+                        <mu>1.0</mu>
+                        <mu2>1.0</mu2>
+                        <kp>10000000</kp>
+                        <kd>1</kd>
+                    </ode>
+                </friction>
+            </surface>
+        </collision>
     </gazebo>
     <!-- END OF WHEELS -->
 
     <gazebo>
-        <plugin name="diff_drive_controller" filename="libgazebo_ros_diff_drive.so">
-            <num_wheel_pairs>2</num_wheel_pairs>
+        <plugin name="diff_drive" filename="libgazebo_ros_diff_drive.so">
             <left_joint>AxleLeftFront</left_joint>
-            <left_joint>AxleLeftBack</left_joint>
-
             <right_joint>AxleRightFront</right_joint>
-            <right_joint>AxleRightBack</right_joint>
-
             <wheel_separation>0.435</wheel_separation>
             <wheel_diameter>0.315</wheel_diameter>
 
             <max_wheel_torque>30.0</max_wheel_torque>
             <max_wheel_acceleration>0.7</max_wheel_acceleration>
-            <!-- Max Teleop Speeds
+
+            <odometry_frame>odom</odometry_frame>
+            <robot_base_frame>base_link</robot_base_frame>
+            <publish_odom>true</publish_odom>
+            <publish_odom_tf>true</publish_odom_tf>
+            <publish_wheel_tf>true</publish_wheel_tf>
+        </plugin>
+    </gazebo>
+
+    <gazebo>
+        <plugin name="diff_drive2" filename="libgazebo_ros_diff_drive.so">
+            <left_joint>AxleLeftBack</left_joint>
+            <right_joint>AxleRightBack</right_joint>
+            <wheel_separation>0.435</wheel_separation>
+            <wheel_diameter>0.315</wheel_diameter>
+
+            <max_wheel_torque>30.0</max_wheel_torque>
+            <max_wheel_acceleration>0.7</max_wheel_acceleration>
+
+            <odometry_frame>odom</odometry_frame>
+            <robot_base_frame>base_link</robot_base_frame>
+            <publish_odom>true</publish_odom>
+            <publish_odom_tf>true</publish_odom_tf>
+            <publish_wheel_tf>true</publish_wheel_tf>
+        </plugin>
+    </gazebo>
+    <!-- Max Teleop Speeds
                 Forward Speed: 1.8 m/s
                 Reverse Speed: 0.06 m/s
                 Left Turn Speed: 1 m/s
                 Right Turn Speed: 1 m/s
-            -->
+                THESE STATS ARE WITH OLD ONE MOTOR SYSTEM
+    -->
 
-            <odometry_frame>odom</odometry_frame>
-            <robot_base_frame>base_link</robot_base_frame>
-
-            <publish_odom>true</publish_odom>
-            <publish_odom_tf>true</publish_odom_tf>
-            <publish_wheel_tf>true</publish_wheel_tf>
-            <update_rate>100.0</update_rate>
-        </plugin>
-    </gazebo>
     <!-- END OF GAZEBO -->
 </robot>
