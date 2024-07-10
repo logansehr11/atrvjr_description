@@ -45,7 +45,7 @@
     <link name="FrontLidar">
         <visual>
             <geometry>
-                <mesh filename="file://$(find junior_description)/meshes/robitFrontLidarCase.stl"/>
+                <mesh filename="file://$(find junior_description)/meshes/robitFrontLidarVisual.dae"/>
             </geometry>
             <material name="skyblue"/>
         </visual>
@@ -63,20 +63,8 @@
 
     <!-- Front Lidar Glass Link -->
     <link name="FrontLidarGlass">
-        <visual>
-            <geometry>
-                <mesh filename="file://$(find junior_description)/meshes/robitFrontLidarGlass.stl"/>
-            </geometry>
-            <material name="black"/>
-        </visual>
-        <collision>
-            <geometry>
-                <mesh filename="file://$(find junior_description)/meshes/robitFrontLidarGlass.stl"/>
-            </geometry>
-            <material name="black"/>
-        </collision>
         <inertial>
-            <mass value="0.01"/>
+            <mass value="0.001"/>
             <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
         </inertial>
     </link>
@@ -180,10 +168,10 @@
         </visual>
         <collision>
             <geometry>
-                <mesh filename="file://$(find junior_description)/meshes/robitWheelCollision.dae"/>
-                <!-- <cylinder length="0.105" radius="0.1575"/> -->
+                <!-- <mesh filename="file://$(find junior_description)/meshes/robitWheelCollision.dae"/> -->
+                <cylinder length="0.105" radius="0.1575"/>
             </geometry>
-            <!-- <origin xyz="0 0 0" rpy="1.57079632679 0 0"/> -->
+            <origin xyz="0 0 0" rpy="1.57079632679 0 0"/>
             <material name="black"/>
         </collision>
         <inertial>
@@ -203,10 +191,10 @@
         </visual>
         <collision>
             <geometry>
-                <mesh filename="file://$(find junior_description)/meshes/robitWheelCollision.dae"/>
-                <!-- <cylinder length="0.105" radius="0.1575"/> -->
+                <!-- <mesh filename="file://$(find junior_description)/meshes/robitWheelCollision.dae"/> -->
+                <cylinder length="0.105" radius="0.1575"/>
             </geometry>
-            <!-- <origin xyz="0 0 0" rpy="1.57079632679 0 0"/> -->
+            <origin xyz="0 0 0" rpy="1.57079632679 0 0"/>
             <material name="black"/>
         </collision>
         <inertial>
@@ -227,10 +215,10 @@
         </visual>
         <collision>
             <geometry>
-                <mesh filename="file://$(find junior_description)/meshes/robitWheelCollision.dae"/>
-                <!-- <cylinder length="0.105" radius="0.1575"/> -->
+                <!-- <mesh filename="file://$(find junior_description)/meshes/robitWheelCollision.dae"/> -->
+                <cylinder length="0.105" radius="0.1575"/>
             </geometry>
-            <!-- <origin xyz="0 0 0" rpy="1.57079632679 0 0"/> -->
+            <origin xyz="0 0 0" rpy="1.57079632679 0 0"/>
             <material name="black"/>
         </collision>
         <inertial>
@@ -250,10 +238,10 @@
         </visual>
         <collision>
             <geometry>
-                <mesh filename="file://$(find junior_description)/meshes/robitWheelCollision.dae"/>
-                <!-- <cylinder length="0.105" radius="0.1575"/> -->
+                <!-- <mesh filename="file://$(find junior_description)/meshes/robitWheelCollision.dae"/> -->
+                <cylinder length="0.105" radius="0.1575"/>
             </geometry>
-            <!-- <origin xyz="0 0 0" rpy="1.57079632679 0 0"/> -->
+            <origin xyz="0 0 0" rpy="1.57079632679 0 0"/>
             <material name="black"/>
         </collision>
         <inertial>
@@ -273,13 +261,13 @@
     <joint name="FrontLidarHolster" type="fixed">
         <parent link="Chassis"/>
         <child link="FrontLidar"/>
-        <origin xyz="0.321 0 -0.098"/> 
+        <origin xyz="0.321 0 -0.085"/> 
     </joint>
 
     <joint name="FrontLidarVision" type="fixed">
         <parent link="FrontLidar"/>
         <child link="FrontLidarGlass"/>
-        <origin xyz="0.075 0 0"/> 
+        <origin xyz="0.08 0 -0.03"/> 
     </joint>
 
     <joint name="BackCameraHolster" type="fixed">
@@ -314,7 +302,7 @@
     <joint name="BackLidarScannerJoint" type="fixed">
         <parent link="BackLidar"/>
         <child link="BackLidarScanner"/>
-        <origin xyz="0 0 0.03" rpy="0 0 0"/>
+        <origin xyz="0 0 0.055" rpy="0 0 0"/>
     </joint>
 
     <joint name="AxleLeftFront" type="continuous">
@@ -354,13 +342,6 @@
 
     <!-- Front Lidar Case -->
     <gazebo reference="FrontLidar">
-        <visual>
-            <material>
-                <diffuse>0.1 0.5 1 1</diffuse>
-                <ambient>0.0666 0.333 0.4 1</ambient>
-                <emissive>0 0 0 0</emissive>
-            </material>
-        </visual>
     </gazebo>
 
     <!-- Front Lidar -->
@@ -390,13 +371,6 @@
                 <frame_name>FrontLidarGlass</frame_name>
             </plugin>
         </sensor>
-        <visual>
-            <material>
-                <diffuse>0.2 0.2 0.2 1</diffuse>
-                <ambient>0.1 0.1 0.1 1</ambient>
-                <emissive>0 0 0 0</emissive>
-            </material>
-        </visual>
     </gazebo>
 
     <!-- Back Camera Case -->
