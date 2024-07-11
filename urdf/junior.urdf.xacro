@@ -25,12 +25,12 @@
     <link name="Chassis">
         <visual>
             <geometry>
-                <mesh filename="file://$(find junior_description)/meshes/robitChassisVisual.dae"/>
+                <mesh filename="file://$(find atrvjr_description)/meshes/robitChassisVisual.dae"/>
             </geometry>
         </visual>
         <collision>
             <geometry>
-                <mesh filename="file://$(find junior_description)/meshes/robitChassisCollision.stl"/>
+                <mesh filename="file://$(find atrvjr_description)/meshes/robitChassisCollision.stl"/>
                <!-- <box size="0.642 0.39 0.412"/> -->
             </geometry>
             <material name="red"/>
@@ -45,13 +45,13 @@
     <link name="FrontLidar">
         <visual>
             <geometry>
-                <mesh filename="file://$(find junior_description)/meshes/robitFrontLidarVisual.dae"/>
+                <mesh filename="file://$(find atrvjr_description)/meshes/robitFrontLidarVisual.dae"/>
             </geometry>
             <material name="skyblue"/>
         </visual>
         <collision>
             <geometry>
-                <mesh filename="file://$(find junior_description)/meshes/robitFrontLidarCase.stl"/>
+                <mesh filename="file://$(find atrvjr_description)/meshes/robitFrontLidarCase.stl"/>
             </geometry>
             <material name="skyblue"/>
         </collision>
@@ -73,13 +73,13 @@
     <link name="BackCameraCase">
         <visual>
             <geometry>
-                <mesh filename="file://$(find junior_description)/meshes/robitBackCameraCase.stl"/>
+                <mesh filename="file://$(find atrvjr_description)/meshes/robitBackCameraCase.stl"/>
             </geometry>
             <material name="black"/>
         </visual>
         <collision>
             <geometry>
-                <mesh filename="file://$(find junior_description)/meshes/robitBackCameraCase.stl"/>
+                <mesh filename="file://$(find atrvjr_description)/meshes/robitBackCameraCase.stl"/>
             </geometry>
             <material name="black"/>
         </collision>
@@ -93,13 +93,13 @@
     <link name="BackCameraStand">
         <visual>
             <geometry>
-                <mesh filename="file://$(find junior_description)/meshes/robitBackCameraStand.stl"/>
+                <mesh filename="file://$(find atrvjr_description)/meshes/robitBackCameraStand.stl"/>
             </geometry>
             <material name="silver"/>
         </visual>
         <collision>
             <geometry>
-                <mesh filename="file://$(find junior_description)/meshes/robitBackCameraStand.stl"/>
+                <mesh filename="file://$(find atrvjr_description)/meshes/robitBackCameraStand.stl"/>
             </geometry>
             <material name="silver"/>
         </collision>
@@ -113,13 +113,13 @@
     <link name="BackCameraHead">
         <visual>
             <geometry>
-                <mesh filename="file://$(find junior_description)/meshes/robitBackCameraHead.stl"/>
+                <mesh filename="file://$(find atrvjr_description)/meshes/robitBackCameraHead.stl"/>
             </geometry>
             <material name="silver"/>
         </visual>
         <collision>
             <geometry>
-                <mesh filename="file://$(find junior_description)/meshes/robitBackCameraHead.stl"/>
+                <mesh filename="file://$(find atrvjr_description)/meshes/robitBackCameraHead.stl"/>
             </geometry>
             <material name="silver"/>
         </collision>
@@ -133,13 +133,13 @@
     <link name="BackLidar">
         <visual>
             <geometry>
-                <mesh filename="file://$(find junior_description)/meshes/hokuyo_urg_04lx.dae"/>
+                <mesh filename="file://$(find atrvjr_description)/meshes/hokuyo_urg_04lx.dae"/>
             </geometry>
             <material name="black"/>
         </visual>
         <collision>
             <geometry>
-                <mesh filename="file://$(find junior_description)/meshes/hokuyo_urg_04lx.dae"/>
+                <mesh filename="file://$(find atrvjr_description)/meshes/hokuyo_urg_04lx.dae"/>
             </geometry>
             <material name="black"/>
         </collision>
@@ -161,14 +161,14 @@
     <link name="WheelLeftFront">
         <visual>
             <geometry>
-                <mesh filename="file://$(find junior_description)/meshes/robitWheel.dae"/>
+                <mesh filename="file://$(find atrvjr_description)/meshes/robitWheel.dae"/>
             </geometry>
             <material name="black"/>
             <origin rpy="-3.14159265359 0 0"/>
         </visual>
         <collision>
             <geometry>
-                <!-- <mesh filename="file://$(find junior_description)/meshes/robitWheelCollision.dae"/> -->
+                <!-- <mesh filename="file://$(find atrvjr_description)/meshes/robitWheelCollision.dae"/> -->
                 <cylinder length="0.105" radius="0.1575"/>
             </geometry>
             <origin xyz="0 0 0" rpy="1.57079632679 0 0"/>
@@ -185,13 +185,13 @@
     <link name="WheelRightFront">
         <visual>
             <geometry>
-                <mesh filename="file://$(find junior_description)/meshes/robitWheel.dae"/>
+                <mesh filename="file://$(find atrvjr_description)/meshes/robitWheel.dae"/>
             </geometry>
             <material name="black"/>
         </visual>
         <collision>
             <geometry>
-                <!-- <mesh filename="file://$(find junior_description)/meshes/robitWheelCollision.dae"/> -->
+                <!-- <mesh filename="file://$(find atrvjr_description)/meshes/robitWheelCollision.dae"/> -->
                 <cylinder length="0.105" radius="0.1575"/>
             </geometry>
             <origin xyz="0 0 0" rpy="1.57079632679 0 0"/>
@@ -208,14 +208,14 @@
     <link name="WheelLeftBack">
         <visual>
             <geometry>
-                <mesh filename="file://$(find junior_description)/meshes/robitWheel.dae"/>
+                <mesh filename="file://$(find atrvjr_description)/meshes/robitWheel.dae"/>
             </geometry>
             <material name="black"/>
             <origin rpy="-3.14159265359 0 0"/>
         </visual>
         <collision>
             <geometry>
-                <!-- <mesh filename="file://$(find junior_description)/meshes/robitWheelCollision.dae"/> -->
+                <!-- <mesh filename="file://$(find atrvjr_description)/meshes/robitWheelCollision.dae"/> -->
                 <cylinder length="0.105" radius="0.1575"/>
             </geometry>
             <origin xyz="0 0 0" rpy="1.57079632679 0 0"/>
@@ -232,13 +232,13 @@
     <link name="WheelRightBack">
         <visual>
             <geometry>
-                <mesh filename="file://$(find junior_description)/meshes/robitWheel.dae"/>
+                <mesh filename="file://$(find atrvjr_description)/meshes/robitWheel.dae"/>
             </geometry>
             <material name="black"/>
         </visual>
         <collision>
             <geometry>
-                <!-- <mesh filename="file://$(find junior_description)/meshes/robitWheelCollision.dae"/> -->
+                <!-- <mesh filename="file://$(find atrvjr_description)/meshes/robitWheelCollision.dae"/> -->
                 <cylinder length="0.105" radius="0.1575"/>
             </geometry>
             <origin xyz="0 0 0" rpy="1.57079632679 0 0"/>

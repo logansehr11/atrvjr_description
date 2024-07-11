@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>junior_description</name>
+  <name>atrvjr_description</name>
   <version>0.0.0</version>
   <description>TODO: Package description</description>
   <maintainer email="logansehr@gmail.com">csrobot</maintainer>
@@ -16,6 +16,6 @@
 
   <export>
     <build_type>ament_cmake</build_type>
-    <gazebo_ros gazebo_model_path="/home/csrobot/junior_ws/install/junior_description/share/"/>
+    <gazebo_ros gazebo_model_path="/home/csrobot/junior_ws/install/atrvjr_description/share/"/>
   </export>
 </package>

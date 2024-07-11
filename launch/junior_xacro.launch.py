@@ -22,7 +22,7 @@ def generate_launch_description():
     )
 
 
-    packagePath = FindPackageShare('junior_description')
+    packagePath = FindPackageShare('atrvjr_description')
 
     ld.add_action(
         Node(
