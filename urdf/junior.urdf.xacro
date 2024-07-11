@@ -544,11 +544,10 @@
         </plugin>
     </gazebo>
     <!-- Max Teleop Speeds
-                Forward Speed: 1.8 m/s
-                Reverse Speed: 0.06 m/s
-                Left Turn Speed: 1 m/s
-                Right Turn Speed: 1 m/s
-                THESE STATS ARE WITH OLD ONE MOTOR SYSTEM
+                Forward Speed: Matched IRL Max Speed
+                Reverse Speed: Matched IRL Max Speed
+                Left Turn Speed: Matched IRL Turn Speeds
+                Right Turn Speed: Matched IRL Turn Speeds
     -->
 
     <!-- END OF GAZEBO -->
