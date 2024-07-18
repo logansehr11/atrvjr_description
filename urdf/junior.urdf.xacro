@@ -129,6 +129,15 @@
         </inertial>
     </link>
 
+    <!-- Back Camera Visual Link -->
+    <link name="BackCameraVisual">
+        <inertial>
+            <mass value="0.001"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+    </link>
+
+
     <!-- Back Lidar Link -->
     <link name="BackLidar">
         <visual>
@@ -293,6 +302,12 @@
         <limit lower="-1" upper="1" effort="5" velocity="2"/> FOR REVOLUTE -->
     </joint>
 
+    <joint name="BackCameraVisualJoint" type="fixed">
+        <parent link="BackCameraHead"/>
+        <child link="BackCameraVisual"/>
+        <origin xyz="0.07 0 0" rpy="0 0 0"/>
+    </joint>
+
     <joint name="BackLidarJoint" type="fixed">
         <parent link="BackCameraCase"/>
         <child link="BackLidar"/>
@@ -404,6 +419,42 @@
                 <emissive>0 0 0 0</emissive>
             </material>
         </visual>
+    </gazebo>
+
+    <!-- Back Camera Visual -->
+    <gazebo reference="BackCameraVisual">
+        <sensor name="bcamera" type="camera">
+            <pose>0 0 0 0 0 0</pose>
+            <camera>
+                <horizontal_fov>2.0</horizontal_fov>
+                <image>
+                    <format>R8G8B8</format>
+                    <width>640</width>
+                    <height>360</height>
+                </image>
+                <clip>
+                    <near>0.05</near>
+                    <far>15000</far>
+                </clip>
+            </camera>
+            <always_on>1</always_on>
+            <update_rate>30</update_rate>
+            <visualize>false</visualize>
+            <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+                <alwaysOn>true</alwaysOn>
+                <updateRate>0.0</updateRate>
+                <cameraName>bcamera</cameraName>
+                <imageTopicName>bimage_raw</imageTopicName>
+                <cameraInfoTopicName>bcamera_info</cameraInfoTopicName>
+                <frameName>camera_link</frameName>
+                <hackBaseline>0.07</hackBaseline>
+                <distortionK1>0.0</distortionK1>
+                <distortionK2>0.0</distortionK2>
+                <distortionK3>0.0</distortionK3>
+                <distortionT1>0.0</distortionT1>
+                <distortionT2>0.0</distortionT2>
+            </plugin>
+        </sensor>
     </gazebo>
 
     <!-- Back Lidar -->
