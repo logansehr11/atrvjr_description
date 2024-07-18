@@ -41,6 +41,14 @@
         </inertial>
     </link>
 
+    <!-- Test Orbital Cam 
+    <link name="OrbitalCamera">
+        <inertial>
+            <mass value="0.001"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+    </link> -->
+
     <!-- Front Lidar Link -->
     <link name="FrontLidar">
         <visual>
@@ -266,6 +274,12 @@
         <child link="Chassis"/>
         <origin xyz="0 0 0.23"/>
     </joint>
+    
+    <!-- <joint name="OrbitalCamera" type="fixed">
+        <parent link="Chassis"/>
+        <child link="OrbitalCamera"/>
+        <origin xyz="0 0 3" rpy="0 1.57 0"/>
+    </joint> -->
 
     <joint name="FrontLidarHolster" type="fixed">
         <parent link="Chassis"/>
@@ -354,6 +368,41 @@
     <!-- Chassis -->
     <gazebo reference="Chassis">
     </gazebo>
+
+    <!-- <gazebo reference="OrbitalCamera">
+        <sensor name="ocamera" type="camera">
+            <pose>0 0 0 0 0 0</pose>
+            <camera>
+                <horizontal_fov>1.0</horizontal_fov>
+                <image>
+                    <format>R8G8B8</format>
+                    <width>700</width>
+                    <height>700</height>
+                </image>
+                <clip>
+                    <near>0.01</near>
+                    <far>15000</far>
+                </clip>
+            </camera>
+            <always_on>1</always_on>
+            <update_rate>30</update_rate>
+            <visualize>false</visualize>
+            <plugin name="ocamera_controller" filename="libgazebo_ros_camera.so">
+                <alwaysOn>true</alwaysOn>
+                <updateRate>0.0</updateRate>
+                <cameraName>ocamera</cameraName>
+                <imageTopicName>oimage_raw</imageTopicName>
+                <cameraInfoTopicName>ocamera_info</cameraInfoTopicName>
+                <frameName>camera_link</frameName>
+                <hackBaseline>0.07</hackBaseline>
+                <distortionK1>0.0</distortionK1>
+                <distortionK2>0.0</distortionK2>
+                <distortionK3>0.0</distortionK3>
+                <distortionT1>0.0</distortionT1>
+                <distortionT2>0.0</distortionT2>
+            </plugin>
+        </sensor>
+    </gazebo> -->
 
     <!-- Front Lidar Case -->
     <gazebo reference="FrontLidar">
